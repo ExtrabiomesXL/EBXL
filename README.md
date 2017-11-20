@@ -1,6 +1,9 @@
 # EBXL
 Clean rewrite of EBXL (from MC 1.7 to MC 1.12)...
 
+* Blog - http://extrabiomes.com/
+* Curse - https://minecraft.curseforge.com/projects/extrabiomesxl/
+
 * * *
 
 ExtrabiomesXL
