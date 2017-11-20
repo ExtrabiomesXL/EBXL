@@ -1,0 +1,18 @@
+[{
+	"modid": "extrabiomesxl",
+	"name": "ExtrabiomesXL",
+	"description": "Adds a variety of biomes to enliven the landscape and make exploration more interesting.",
+	"version": "@version@",
+	"mcversion": "@mcversion@",
+	"url": "https://minecraft.curseforge.com/projects/extrabiomesxl",
+	"updateUrl": "",
+	"authorList": [
+		"allaryin"
+	],
+	"credits": "Too many to count over the years: MisterFiber, ScottKillen, JLBShecky, bspkrs, Zenth, Annysia. See the wiki for more.",
+	"logoFile": "eb-logo.png",
+	"screenshots": [],
+	"requiredMods": [],
+	"dependencies": [],
+	"useDependencyInformation": true
+}]
