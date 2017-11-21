@@ -15,7 +15,7 @@ public class Extrabiomes {
 	public static final String MODID = "extrabiomesxl";
 	
 	@SidedProxy(clientSide = "com.extrabiomes.ebxl.proxy.ClientProxy", 
-				serverSide = "com.extrabiomes.ebxl.proxy.ServerProxy")
+				serverSide = "com.extrabiomes.ebxl.proxy.CommonProxy")
 	public static CommonProxy proxy;
 	
 	@Mod.Instance
