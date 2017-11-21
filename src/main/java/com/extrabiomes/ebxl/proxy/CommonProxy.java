@@ -9,6 +9,7 @@ import com.extrabiomes.ebxl.handlers.ConfigHandler;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
@@ -33,6 +34,11 @@ public class CommonProxy {
 	public void postInit(FMLPostInitializationEvent event) {
 		log.trace("proxy.postInit");
 		ConfigHandler.postInit();
+	}
+	
+	@SubscribeEvent
+	public void onConfigChangedEvent(ConfigChangedEvent.OnConfigChangedEvent event) {
+		Config.flush();
 	}
 
     @SubscribeEvent
