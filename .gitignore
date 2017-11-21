@@ -30,3 +30,4 @@ bin/
 .project
 local.properties
 
+/build/
