@@ -1,8 +1,11 @@
 package com.extrabiomes.ebxl.config;
 
 import java.io.File;
+import java.util.Map;
 
 import com.extrabiomes.ebxl.Extrabiomes;
+import com.google.common.collect.Maps;
+
 import net.minecraftforge.common.config.Configuration;
 
 public enum Config {
@@ -11,7 +14,7 @@ public enum Config {
 	// the config file itself
 	public Configuration config;
 	
-	// TODO: store references to different config settings collections
+	public Map<Integer,BiomeSettings> biomes = Maps.newHashMap();
 	
 	public static Configuration init(File file) {
 		INSTANCE._init(file);
@@ -35,5 +38,12 @@ public enum Config {
 		if( config.hasChanged() ) {
 			config.save();
 		}
+	}
+	
+	public static void addBiome(BiomeSettings settings) {
+		INSTANCE.biomes.put(settings.getID(), settings);
+	}
+	public static BiomeSettings getBiome(int id) {
+		return INSTANCE.biomes.get(id);
 	}
 }
