@@ -3,6 +3,8 @@ package com.extrabiomes.ebxl.proxy;
 import org.apache.logging.log4j.Logger;
 
 import com.extrabiomes.ebxl.Extrabiomes;
+import com.extrabiomes.ebxl.config.Config;
+import com.extrabiomes.ebxl.handlers.ConfigHandler;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -16,10 +18,12 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 @Mod.EventBusSubscriber
 public class CommonProxy {
 	protected static Logger log;
+	public static Config config;
 
 	public void preInit(FMLPreInitializationEvent event) {
 		log = Extrabiomes.log;
 		log.trace("proxy.preInit");
+		ConfigHandler.init(event);
 	}
 
 	public void init(FMLInitializationEvent event) {
@@ -28,6 +32,7 @@ public class CommonProxy {
 
 	public void postInit(FMLPostInitializationEvent event) {
 		log.trace("proxy.postInit");
+		ConfigHandler.postInit();
 	}
 
     @SubscribeEvent
