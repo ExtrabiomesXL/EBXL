@@ -31,3 +31,5 @@ bin/
 local.properties
 
 /build/
+
+build\.properties
