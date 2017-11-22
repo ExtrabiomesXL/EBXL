@@ -1,22 +1,27 @@
 package com.extrabiomes.ebxl.handlers;
 
-import com.extrabiomes.ebxl.biomes.ExtraBiome;
+import com.extrabiomes.ebxl.Extrabiomes;
 import com.extrabiomes.ebxl.config.BiomeSettings;
 
 import net.minecraft.world.biome.Biome;
 import net.minecraftforge.common.BiomeManager;
-import net.minecraftforge.common.BiomeManager.BiomeEntry;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
 public class BiomeHandler {
 
 	public static void registerBiome(BiomeSettings settings) {
-		Biome biome = new ExtraBiome(settings);	// TODO: instantiate the correct class instead
+		final Biome biome;
+		try {
+			biome = settings.init();
+		} catch (Exception e) {
+			Extrabiomes.log.error("Unable to init biome settings "+settings, e);
+			return;
+		}
 		ForgeRegistries.BIOMES.register(biome);
 		
 		// TODO: register dictionary types
 		
-		BiomeManager.addBiome(settings.getBiomeType(), new BiomeEntry(biome,settings.getWeight()));
+		BiomeManager.addBiome(settings.getBiomeType(), settings.getBiomeEntry());
 	}
 
 }

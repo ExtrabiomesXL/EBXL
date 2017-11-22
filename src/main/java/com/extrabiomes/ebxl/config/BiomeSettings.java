@@ -2,6 +2,9 @@ package com.extrabiomes.ebxl.config;
 
 import com.extrabiomes.ebxl.biomes.*;
 
+import net.minecraftforge.common.BiomeManager.BiomeEntry;
+import net.minecraftforge.common.BiomeManager.BiomeType;
+
 public enum BiomeSettings {
 /* @formatter:off */
 	AUTUMNWOODS		(BiomeAutumnWoods.class)/*,
@@ -18,6 +21,7 @@ public enum BiomeSettings {
 	public final Weights weight;
 	
 	public ExtraBiome biome;
+	public boolean enabled = true;
 	
 	private enum Weights {
 		NONE(0), LIGHT(5), NORMAL(10), HEAVY(20);
@@ -37,10 +41,27 @@ public enum BiomeSettings {
 		this( clazz, Weights.NORMAL );
 	}
 	
-	public void init() throws Exception {
-		biome = biomeClass.newInstance();
+	public ExtraBiome init() throws Exception {
+		if( this.enabled ) {
+			biome = biomeClass.newInstance();
+		}
+		return biome;
+	}
+	
+	public BiomeEntry getBiomeEntry() {
+		return new BiomeEntry(biome, getWeight());
 	}
 
-
 	public int getWeight() { return weight.value; }
+	public BiomeType getBiomeType() {
+		if( biome == null ) {
+			return ExtraBiome.DEFAULT_TYPE;
+		} else {
+			return biome.type;
+		}
+	}
+	
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
+	}
 }
