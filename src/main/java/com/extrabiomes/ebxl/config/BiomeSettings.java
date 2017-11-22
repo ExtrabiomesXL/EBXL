@@ -7,14 +7,14 @@ import net.minecraftforge.common.BiomeManager.BiomeType;
 
 public enum BiomeSettings {
 /* @formatter:off */
-	AUTUMNWOODS		(BiomeAutumnWoods.class)/*,
+	AUTUMNWOODS		(BiomeAutumnWoods.class),
 	GREENHILLS		(BiomeGreenHills.class),
 	GREENSWAMP		(BiomeGreenSwamp.class),
 	MEADOW			(BiomeMeadow.class),
 	REDROCKDESERT	(BiomeRedRockDesert.class),
 	REDWOODFOREST	(BiomeRedwoodForest.class),
 	WASTELAND		(BiomeWasteland.class),
-	WOODLANDS		(BiomeWoodlands.class)*/;
+	WOODLANDS		(BiomeWoodlands.class);
 /* @formatter:on */
 	
 	public final Class<?extends ExtraBiome> biomeClass;
