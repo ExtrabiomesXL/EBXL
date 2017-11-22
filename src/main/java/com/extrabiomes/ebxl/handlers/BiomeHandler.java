@@ -1,16 +1,17 @@
 package com.extrabiomes.ebxl.handlers;
 
 import com.extrabiomes.ebxl.Extrabiomes;
+import com.extrabiomes.ebxl.biomes.ExtraBiome;
 import com.extrabiomes.ebxl.config.BiomeSettings;
 
-import net.minecraft.world.biome.Biome;
+import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
 public class BiomeHandler {
 
 	public static void registerBiome(BiomeSettings settings) {
-		final Biome biome;
+		final ExtraBiome biome;
 		try {
 			biome = settings.init();
 		} catch (Exception e) {
@@ -19,7 +20,9 @@ public class BiomeHandler {
 		}
 		ForgeRegistries.BIOMES.register(biome);
 		
-		// TODO: register dictionary types
+		for( BiomeDictionary.Type type : biome.dictTypes ) {
+			BiomeDictionary.addTypes(biome, type);
+		}
 		
 		BiomeManager.addBiome(settings.getBiomeType(), settings.getBiomeEntry());
 	}

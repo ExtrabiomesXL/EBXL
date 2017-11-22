@@ -3,6 +3,7 @@ package com.extrabiomes.ebxl.biomes;
 import com.extrabiomes.ebxl.config.BiomeSettings;
 
 import net.minecraft.init.Biomes;
+import net.minecraftforge.common.BiomeDictionary.Type;
 import net.minecraftforge.common.BiomeManager.BiomeType;
 
 public class BiomeGreenHills extends ExtraBiome {
@@ -18,6 +19,11 @@ public class BiomeGreenHills extends ExtraBiome {
 	public BiomeGreenHills(BiomeSettings settings) {
 		super(settings, props);
 		this.type = BiomeType.WARM;
+
+		// In 1.7 was: Hills
+		dictTypes.add(Type.WET);
+		dictTypes.add(Type.LUSH);
+		dictTypes.add(Type.HILLS);
 	}
 
 }

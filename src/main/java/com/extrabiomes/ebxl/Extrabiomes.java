@@ -2,8 +2,11 @@ package com.extrabiomes.ebxl;
 
 import org.apache.logging.log4j.Logger;
 
+import com.extrabiomes.ebxl.config.Config;
+import com.extrabiomes.ebxl.config.DebugSettings;
 import com.extrabiomes.ebxl.proxy.CommonProxy;
 
+import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.common.BiomeManager.BiomeEntry;
 import net.minecraftforge.common.BiomeManager.BiomeType;
@@ -37,19 +40,32 @@ public class Extrabiomes {
 	public void init(FMLInitializationEvent event) {
 		log.trace("init");
 		proxy.init(event);
-		
-		// dump loaded biome list
-		for( BiomeType type : BiomeType.values() ) {
-			log.info(type);
-			for( BiomeEntry entry : BiomeManager.getBiomes(type) ) {
-				log.info(entry.biome+" : "+entry.itemWeight);
-			}
-		}
 	}
 	
 	@Mod.EventHandler
 	public void postInit(FMLPostInitializationEvent event) {
 		log.trace("postInit");
 		proxy.postInit(event);
+		
+		if( DebugSettings.DUMP_BIOMES.getBoolean() ) {
+			dumpAllBiomes();
+		}
+	}
+	
+	/**
+	 * Dump a list of all loaded biomes and their type enums to
+	 */
+	public static void dumpAllBiomes() {
+		for( BiomeType type : BiomeType.values() ) {
+			log.info(type+" -----");
+			for( BiomeEntry entry : BiomeManager.getBiomes(type) ) {
+				log.info("  "+entry.biome.getRegistryName()+" ("+entry.biome.getClass()+") : "+ entry.itemWeight);
+				final StringBuilder str = new StringBuilder("    -");
+				for( BiomeDictionary.Type dictType : BiomeDictionary.getTypes(entry.biome) ) {
+					str.append(" "+dictType);
+				}
+				log.info(str.toString());
+			}
+		}
 	}
 }

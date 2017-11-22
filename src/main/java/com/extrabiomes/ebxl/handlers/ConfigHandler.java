@@ -2,6 +2,7 @@ package com.extrabiomes.ebxl.handlers;
 
 import com.extrabiomes.ebxl.config.BiomeSettings;
 import com.extrabiomes.ebxl.config.Config;
+import com.extrabiomes.ebxl.config.DebugSettings;
 
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -14,6 +15,7 @@ public class ConfigHandler {
 		Configuration cfgfile = Config.init(event.getSuggestedConfigurationFile());
 		initGeneral(cfgfile);
 		initBiomes(cfgfile);
+		initDebug(cfgfile);
 	}
 
 	public static void postInit() {
@@ -46,6 +48,11 @@ public class ConfigHandler {
 			BiomeHandler.registerBiome(settings);
 			// Config.addBiome(settings);
 		}
+	}
+	
+	private static final String CATEGORY_DEBUG = "debug";
+	private static void initDebug(Configuration cfgfile) {
+		DebugSettings.DUMP_BIOMES.value = cfgfile.getBoolean("dump.biomes", CATEGORY_DEBUG, true, "Dump a list of loaded biomes, types, and weights to log in postInit");
 	}
 
 }
