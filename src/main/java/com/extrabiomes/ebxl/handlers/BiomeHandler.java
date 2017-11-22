@@ -14,7 +14,7 @@ public class BiomeHandler {
 		try {
 			biome = settings.init();
 		} catch (Exception e) {
-			Extrabiomes.log.error("Unable to init biome settings "+settings, e);
+			Extrabiomes.log.error("Unable to init "+settings, e);
 			return;
 		}
 		ForgeRegistries.BIOMES.register(biome);

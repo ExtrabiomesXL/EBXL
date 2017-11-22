@@ -43,7 +43,7 @@ public enum BiomeSettings {
 	
 	public ExtraBiome init() throws Exception {
 		if( this.enabled ) {
-			biome = biomeClass.newInstance();
+			biome = biomeClass.getConstructor(this.getClass()).newInstance(this);
 		}
 		return biome;
 	}
