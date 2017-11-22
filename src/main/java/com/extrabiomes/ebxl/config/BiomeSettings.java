@@ -1,39 +1,46 @@
 package com.extrabiomes.ebxl.config;
 
-import net.minecraftforge.common.BiomeManager.BiomeType;
+import com.extrabiomes.ebxl.biomes.*;
 
 public enum BiomeSettings {
 /* @formatter:off */
-	AUTUMNWOODS		(61,	BiomeType.COOL),
-	GREENHILLS		(67,	BiomeType.WARM),
-	GREENSWAMP		(40,	BiomeType.WARM),
-	MEADOW			(43,	BiomeType.COOL),
-	REDROCKDESERT	(46,	BiomeType.DESERT),
-	REDWOODFOREST	(50,	BiomeType.COOL),
-	WASTELAND		(58,	BiomeType.DESERT),
-	WOODLANDS		(59,	BiomeType.COOL);
+	AUTUMNWOODS		(BiomeAutumnWoods.class)/*,
+	GREENHILLS		(BiomeGreenHills.class),
+	GREENSWAMP		(BiomeGreenSwamp.class),
+	MEADOW			(BiomeMeadow.class),
+	REDROCKDESERT	(BiomeRedRockDesert.class),
+	REDWOODFOREST	(BiomeRedwoodForest.class),
+	WASTELAND		(BiomeWasteland.class),
+	WOODLANDS		(BiomeWoodlands.class)*/;
 /* @formatter:on */
 	
-	public final int defaultID;
+	public final Class<?extends ExtraBiome> biomeClass;
+	public final Weights weight;
 	
-	private int biomeID;
-	private BiomeType type;
-	private int weight;
+	public ExtraBiome biome;
 	
-	private BiomeSettings(int defaultID, BiomeType type) {
-		this(defaultID, type, 10);
+	private enum Weights {
+		NONE(0), LIGHT(5), NORMAL(10), HEAVY(20);
+
+		public final int value;
+
+		Weights(int value) {
+			this.value = value;
+		}
 	}
-	private BiomeSettings(int defaultID, BiomeType type, int weight) {
-		this.defaultID = defaultID;
-		this.biomeID = this.defaultID;
-		this.type = type;
+	
+	private BiomeSettings( Class<?extends ExtraBiome> clazz, Weights weight ) {
+		this.biomeClass = clazz;
 		this.weight = weight;
 	}
+	private BiomeSettings( Class<?extends ExtraBiome> clazz ) {
+		this( clazz, Weights.NORMAL );
+	}
 	
-	public int getID() { return biomeID; }
-	public void setID(int id) { biomeID = id; }
-	
-	public BiomeType getBiomeType() { return type; }
-	
-	public int getWeight() { return weight; }
+	public void init() throws Exception {
+		biome = biomeClass.newInstance();
+	}
+
+
+	public int getWeight() { return weight.value; }
 }
