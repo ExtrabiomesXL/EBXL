@@ -11,7 +11,7 @@ import net.minecraftforge.fml.common.registry.ForgeRegistries;
 public class BiomeHandler {
 
 	public static void registerBiome(BiomeSettings settings) {
-		Biome biome = new ExtraBiome();	// TODO: instantiate the correct class instead
+		Biome biome = new ExtraBiome(settings);	// TODO: instantiate the correct class instead
 		ForgeRegistries.BIOMES.register(biome);
 		
 		// TODO: register dictionary types

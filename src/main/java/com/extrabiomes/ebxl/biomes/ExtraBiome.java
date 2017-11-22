@@ -1,5 +1,8 @@
 package com.extrabiomes.ebxl.biomes;
 
+import com.extrabiomes.ebxl.Extrabiomes;
+import com.extrabiomes.ebxl.config.BiomeSettings;
+
 import net.minecraft.init.Biomes;
 import net.minecraft.world.biome.Biome;
 
@@ -14,9 +17,9 @@ public class ExtraBiome extends Biome {
 		props.setHeightVariation(Biomes.FOREST.getHeightVariation());
 	}
 	
-	public ExtraBiome() {
+	public ExtraBiome(BiomeSettings settings) {
 		super(props);
-		// TODO Auto-generated constructor stub
+		this.setRegistryName(Extrabiomes.MODID, settings.name());
 	}
 
 }
