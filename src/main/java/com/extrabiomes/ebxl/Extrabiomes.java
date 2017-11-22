@@ -4,6 +4,9 @@ import org.apache.logging.log4j.Logger;
 
 import com.extrabiomes.ebxl.proxy.CommonProxy;
 
+import net.minecraftforge.common.BiomeManager;
+import net.minecraftforge.common.BiomeManager.BiomeEntry;
+import net.minecraftforge.common.BiomeManager.BiomeType;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -34,6 +37,14 @@ public class Extrabiomes {
 	public void init(FMLInitializationEvent event) {
 		log.trace("init");
 		proxy.init(event);
+		
+		// dump loaded biome list
+		for( BiomeType type : BiomeType.values() ) {
+			log.info(type);
+			for( BiomeEntry entry : BiomeManager.getBiomes(type) ) {
+				log.info(entry.biome+" : "+entry.itemWeight);
+			}
+		}
 	}
 	
 	@Mod.EventHandler

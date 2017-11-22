@@ -42,6 +42,7 @@ public class ConfigHandler {
 		for( BiomeSettings settings : BiomeSettings.values() ) {
 			String biome = settings.name().toLowerCase();
 			settings.setID(cfgfile.getInt(biome+".id", CATEGORY_BIOMES, settings.defaultID, -1, 255, biome));
+			BiomeHandler.registerBiome(settings);
 			Config.addBiome(settings);
 		}
 	}
