@@ -15,6 +15,7 @@ public class BiomeWasteland extends ExtraBiome {
 		props.setTemperature(Biomes.DESERT.getTemperature());
 		props.setRainfall(Biomes.DESERT.getRainfall());
 		props.setRainDisabled();
+		props.setWaterColor(0xF08000);
 	}
 
 	public BiomeWasteland(BiomeSettings settings) {
@@ -22,7 +23,6 @@ public class BiomeWasteland extends ExtraBiome {
 		this.type = BiomeType.DESERT;
 		
 		// setColor(0x9E7C41);
-		// waterColorMultiplier = 0xF08000;
 
 		// In 1.7 was: WASTELAND
 		dictTypes.add(Type.HOT);
