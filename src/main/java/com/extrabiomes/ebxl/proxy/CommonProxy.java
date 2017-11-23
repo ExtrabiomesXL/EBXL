@@ -4,7 +4,9 @@ import org.apache.logging.log4j.Logger;
 
 import com.extrabiomes.ebxl.Extrabiomes;
 import com.extrabiomes.ebxl.config.Config;
+import com.extrabiomes.ebxl.handlers.BlockHandler;
 import com.extrabiomes.ebxl.handlers.ConfigHandler;
+import com.extrabiomes.ebxl.handlers.ItemHandler;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -44,11 +46,13 @@ public class CommonProxy {
     @SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event) {
     	log.trace("proxy.registerBlocks");
+    	BlockHandler.init(event);
     }
 
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event) {
     	log.trace("proxy.registerItems");
+    	ItemHandler.init(event);
     }
 
 }
