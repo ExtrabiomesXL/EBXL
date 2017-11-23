@@ -8,9 +8,14 @@ import com.extrabiomes.ebxl.config.BiomeSettings;
 import com.extrabiomes.ebxl.config.DecorationSettings;
 import com.google.common.collect.Lists;
 
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.ColorizerFoliage;
+import net.minecraft.world.ColorizerGrass;
 import net.minecraft.world.biome.Biome;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.BiomeManager.BiomeType;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public abstract class ExtraBiome extends Biome {
 
@@ -22,7 +27,13 @@ public abstract class ExtraBiome extends Biome {
 	public final BiomeSettings settings;
 	public final DecorationSettings decorSettings;
 	
+	@SuppressWarnings("unused")
 	private int newFlowersPerChunk = 0;
+	
+	private Double foliageColor0 = null;
+	private Double foliageColor1 = null;
+	private Double grassColor0 = null;
+	private Double grassColor1 = null;
 	
 	public ExtraBiome(BiomeSettings settings, BiomeProperties props) {
 		super(props);
@@ -49,5 +60,37 @@ public abstract class ExtraBiome extends Biome {
 			}
 		}
 	}
+	
+	protected void setFoliageColor(double color0, double color1) {
+		this.foliageColor0 = color0;
+		this.foliageColor1 = color1;
+	}
+	
+	protected void setGrassColor(double color0, double color1) {
+		this.grassColor0 = color0;
+		this.grassColor1 = color1;
+	}
+	
+	@Override
+    @SideOnly(Side.CLIENT)
+    public int getFoliageColorAtPos(BlockPos pos) {
+		/**
+		 * NB: I don't know what these getModdedBiomeGrassColor wrapper calls are doing, we didn't
+		 * ever do/have that in the older build... but it's what forge does now, so I'm going with it.
+		 */
+		if( foliageColor0 != null && foliageColor1 != null )
+			return getModdedBiomeGrassColor(ColorizerFoliage.getFoliageColor(foliageColor0, foliageColor1));
+		else
+			return super.getFoliageColorAtPos(pos);
+    }
+    
+    @Override
+    @SideOnly(Side.CLIENT)
+    public int getGrassColorAtPos(BlockPos pos) {
+    	if( grassColor0 != null && grassColor1 != null )
+    		return getModdedBiomeGrassColor(ColorizerGrass.getGrassColor(grassColor0, grassColor1));
+    	else
+    		return super.getGrassColorAtPos(pos);
+    }
 
 }
