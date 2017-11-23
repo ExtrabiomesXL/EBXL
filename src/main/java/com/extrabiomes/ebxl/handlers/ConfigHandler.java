@@ -1,8 +1,12 @@
 package com.extrabiomes.ebxl.handlers;
 
+import java.util.Map;
+
 import com.extrabiomes.ebxl.config.BiomeSettings;
 import com.extrabiomes.ebxl.config.Config;
 import com.extrabiomes.ebxl.config.DebugSettings;
+import com.extrabiomes.ebxl.config.DecorationSettings;
+import com.extrabiomes.ebxl.config.DecorationSettings.Decoration;
 
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -45,14 +49,33 @@ public class ConfigHandler {
 			String biome = settings.name().toLowerCase();
 			settings.setEnabled(cfgfile.getBoolean(biome+".enabled", CATEGORY_BIOMES, settings.enabled, "Does this biome generate?"));
 			settings.setWeight(cfgfile.getInt(biome+".weight", CATEGORY_BIOMES, settings.weight, 0, 50, "How common is this biome? 10 is vanilla."));
+			initDecorations(biome, cfgfile);
 			BiomeHandler.registerBiome(settings);
 			// Config.addBiome(settings);
+		}
+	}
+	private static void initDecorations(String biome, Configuration cfgfile) {
+		final DecorationSettings settings;
+		try {
+			// yes, I get the irony of going back to upper case here...
+			settings = DecorationSettings.valueOf(biome.toUpperCase());
+		} catch( Exception e ) {
+			return;
+		}
+		// parse all of a given biome's decoration settings
+		Map<Decoration, Integer> map = settings.get();
+		for( Decoration decor : Decoration.values() ) {
+			// don't init null properties
+			if( !map.containsKey(decor) ) continue;
+			final int val = cfgfile.getInt(biome+decor.key, CATEGORY_BIOMES, map.get(decor), 0, 50, "Number of "+biome+decor.key+" to try to generate per chunk" );
+			map.put(decor, val);
 		}
 	}
 	
 	private static final String CATEGORY_DEBUG = "debug";
 	private static void initDebug(Configuration cfgfile) {
 		DebugSettings.DUMP_BIOMES.value = cfgfile.getBoolean("dump.biomes", CATEGORY_DEBUG, true, "Dump a list of loaded biomes, types, and weights to log in postInit");
+		// TODO: DebugSettings.DUMP_DECORATIONS.value = cfgfile.getBoolean("dump.decorations", CATEGORY_DEBUG, true, "Dump a list of decoration counts per biome");
 	}
 
 }
