@@ -14,6 +14,7 @@ public class BlockHandler {
 		final IForgeRegistry<Block> reg = event.getRegistry();
 		// TODO: figure out GameRegistry.ObjectHolder interactions
 		register(reg, new BlockRedRock());
+		register(reg, new BlockCrackedSand());
 	}
 	
 	public static void register(IForgeRegistry<Block> reg, Block block) {
@@ -23,6 +24,7 @@ public class BlockHandler {
 	@SideOnly(Side.CLIENT)
 	public static void initModels() {
 		ExtraBlocks.redrock.initModel();
+		ExtraBlocks.crackedsand.initModel();
 	}
 
 }

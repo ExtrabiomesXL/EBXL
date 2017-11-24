@@ -1,8 +1,10 @@
 package com.extrabiomes.ebxl.biomes;
 
+import com.extrabiomes.ebxl.blocks.ExtraBlocks;
 import com.extrabiomes.ebxl.config.BiomeSettings;
 
 import net.minecraft.init.Biomes;
+import net.minecraft.init.Blocks;
 import net.minecraftforge.common.BiomeDictionary.Type;
 import net.minecraftforge.common.BiomeManager.BiomeType;
 
@@ -32,6 +34,12 @@ public class BiomeWasteland extends ExtraBiome {
 		dictTypes.add(Type.WASTELAND);
 		
 		spawnableCreatureList.clear();
+	}
+	
+	@Override
+	public void setBlocks() {
+		this.topBlock = ExtraBlocks.crackedsand.getDefaultState();
+		this.fillerBlock = ExtraBlocks.crackedsand.getDefaultState();
 	}
 
 }

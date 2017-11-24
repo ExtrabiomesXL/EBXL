@@ -93,4 +93,8 @@ public abstract class ExtraBiome extends Biome {
     		return super.getGrassColorAtPos(pos);
     }
 
+	public void setBlocks() {
+		
+	}
+
 }

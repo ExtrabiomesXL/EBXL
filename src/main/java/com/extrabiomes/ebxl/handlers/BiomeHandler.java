@@ -27,4 +27,10 @@ public class BiomeHandler {
 		BiomeManager.addBiome(settings.getBiomeType(), settings.getBiomeEntry());
 	}
 
+	public static void initBlocks() {
+		for( BiomeSettings settings : BiomeSettings.values() ) {
+			settings.biome.setBlocks();
+		}
+	}
+
 }

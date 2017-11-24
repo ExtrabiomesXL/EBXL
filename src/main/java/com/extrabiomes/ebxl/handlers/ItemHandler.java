@@ -16,6 +16,9 @@ public class ItemHandler {
 		
 		register(reg, ExtraBlocks.redrock);
 		ExtraBlocks.redrock.setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
+		
+		register(reg, ExtraBlocks.crackedsand);
+		ExtraBlocks.crackedsand.setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
 	}
 	
 	public static void register(IForgeRegistry<Item> reg, Item item) {

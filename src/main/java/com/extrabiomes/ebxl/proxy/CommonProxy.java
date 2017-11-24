@@ -4,6 +4,7 @@ import org.apache.logging.log4j.Logger;
 
 import com.extrabiomes.ebxl.Extrabiomes;
 import com.extrabiomes.ebxl.config.Config;
+import com.extrabiomes.ebxl.handlers.BiomeHandler;
 import com.extrabiomes.ebxl.handlers.BlockHandler;
 import com.extrabiomes.ebxl.handlers.ConfigHandler;
 import com.extrabiomes.ebxl.handlers.ItemHandler;
@@ -47,6 +48,7 @@ public class CommonProxy {
     public static void registerBlocks(RegistryEvent.Register<Block> event) {
     	log.trace("proxy.registerBlocks");
     	BlockHandler.init(event);
+    	BiomeHandler.initBlocks();
     }
 
     @SubscribeEvent
