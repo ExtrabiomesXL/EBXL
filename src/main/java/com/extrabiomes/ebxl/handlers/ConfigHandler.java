@@ -50,7 +50,7 @@ public class ConfigHandler {
 			settings.setEnabled(cfgfile.getBoolean(biome+".enabled", CATEGORY_BIOMES, settings.enabled, "Does this biome generate?"));
 			settings.setWeight(cfgfile.getInt(biome+".weight", CATEGORY_BIOMES, settings.weight, 0, 50, "How common is this biome? 10 is vanilla."));
 			initDecorations(settings, cfgfile);
-			BiomeHandler.registerBiome(settings);
+			// BiomeHandler.registerBiome(settings);
 			// Config.addBiome(settings);
 		}
 	}

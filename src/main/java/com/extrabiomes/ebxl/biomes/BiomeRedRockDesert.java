@@ -38,10 +38,7 @@ public class BiomeRedRockDesert extends ExtraBiome {
 		
 		spawnableCreatureList.clear();
 	    spawnableCreatureList.add(new SpawnListEntry(EntityHorse.class, 3, 1, 3));
-	}
-	
-	@Override
-	public void setBlocks() {
+	    
 	    this.topBlock = ExtraBlocks.redrock.getDefaultState();
 	    this.fillerBlock = ExtraBlocks.redrock.getDefaultState();
 	}

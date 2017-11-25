@@ -13,12 +13,12 @@ public class ClientProxy extends CommonProxy {
 	@Override
 	public void preInit(FMLPreInitializationEvent event) {
 		super.preInit(event);
-		log.trace("client.preInit");
+		log.info("client.preInit");
 	}
 
 	@SubscribeEvent
 	public static void registerModels(ModelRegistryEvent event) {
-		log.trace("client.registerModels");
+		log.info("client.registerModels");
 		BlockHandler.initModels();
 		// ItemHandler.initModels();
 	}

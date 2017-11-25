@@ -1,5 +1,6 @@
 package com.extrabiomes.ebxl.handlers;
 
+import com.extrabiomes.ebxl.Extrabiomes;
 import com.extrabiomes.ebxl.blocks.*;
 
 import net.minecraft.block.Block;
@@ -12,19 +13,21 @@ public class BlockHandler {
 
 	public static void init(Register<Block> event) {
 		final IForgeRegistry<Block> reg = event.getRegistry();
-		// TODO: figure out GameRegistry.ObjectHolder interactions
-		register(reg, new BlockRedRock());
-		register(reg, new BlockCrackedSand());
+		ExtraBlocks.redrock = register(reg, new BlockRedRock());
+		ExtraBlocks.crackedsand = register(reg, new BlockCrackedSand());
+		Extrabiomes.log.info("-- blocks registered");
 	}
 	
-	public static void register(IForgeRegistry<Block> reg, Block block) {
+	public static Block register(IForgeRegistry<Block> reg, Block block) {
 		reg.register(block);
+		return block;
 	}
 
 	@SideOnly(Side.CLIENT)
 	public static void initModels() {
-		ExtraBlocks.redrock.initModel();
-		ExtraBlocks.crackedsand.initModel();
+		((BlockRedRock)ExtraBlocks.redrock).initModel();
+		((BlockCrackedSand)ExtraBlocks.crackedsand).initModel();
+		Extrabiomes.log.info("-- models registered");
 	}
 
 }

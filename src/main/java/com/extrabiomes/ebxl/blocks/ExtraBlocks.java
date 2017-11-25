@@ -1,12 +1,8 @@
 package com.extrabiomes.ebxl.blocks;
 
-import com.extrabiomes.ebxl.Extrabiomes;
-import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraft.block.Block;
 
 public class ExtraBlocks {
-	@GameRegistry.ObjectHolder(Extrabiomes.MODID+":redrock")
-	public static BlockRedRock redrock;
-	
-	@GameRegistry.ObjectHolder(Extrabiomes.MODID+":crackedsand")
-	public static BlockCrackedSand crackedsand;
+	public static Block redrock;
+	public static Block crackedsand;
 }

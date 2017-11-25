@@ -34,12 +34,9 @@ public class BiomeWasteland extends ExtraBiome {
 		dictTypes.add(Type.WASTELAND);
 		
 		spawnableCreatureList.clear();
-	}
-	
-	@Override
-	public void setBlocks() {
+		
 		this.topBlock = ExtraBlocks.crackedsand.getDefaultState();
 		this.fillerBlock = ExtraBlocks.crackedsand.getDefaultState();
 	}
-
+	
 }
