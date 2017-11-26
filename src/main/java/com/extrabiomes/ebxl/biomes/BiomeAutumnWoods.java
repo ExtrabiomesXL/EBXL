@@ -1,13 +1,21 @@
 package com.extrabiomes.ebxl.biomes;
 
+import java.util.Random;
+
 import com.extrabiomes.ebxl.config.BiomeSettings;
+import com.extrabiomes.ebxl.gen.WorldGenAutumnTree;
 
 import net.minecraft.entity.passive.EntityWolf;
 import net.minecraft.init.Biomes;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
+import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import net.minecraftforge.common.BiomeDictionary.Type;
 import net.minecraftforge.common.BiomeManager.BiomeType;
 
 public class BiomeAutumnWoods extends ExtraBiome {
+	
+	public static WorldGenAutumnTree treeGen = new WorldGenAutumnTree(false);
 
 	public static BiomeProperties props = new BiomeProperties("Autumn Woods");
 	static {
@@ -36,4 +44,8 @@ public class BiomeAutumnWoods extends ExtraBiome {
 		spawnableCreatureList.add(new SpawnListEntry(EntityWolf.class, 5, 4, 4));
 	}
 
+	@Override
+	public WorldGenAbstractTree getRandomTreeFeature(Random rand) {
+		return treeGen;
+	}
 }

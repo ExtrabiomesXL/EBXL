@@ -47,7 +47,7 @@ public class WorldGenAutumnTree extends WorldGenAbstractTree {
 		final int _y = position.getY();
 		final int _z = position.getZ();
 		
-		for( int y = _y - CANOPY_HEIGHT + height; y < _y + height; ++y ) {
+		for( int y = _y - CANOPY_HEIGHT + height; y <= _y + height; ++y ) {
 			final int canopyRow = y - (_y + height);
 			final int radius = CANOPY_RADIUS_EXTRA_RADIUS + 1 - (canopyRow / 2);
 			
@@ -71,7 +71,7 @@ public class WorldGenAutumnTree extends WorldGenAbstractTree {
 	}
 
 	private void growTrunk(World world, BlockPos position, int height) {
-		for( int y = 0; y <= height; ++y ) {
+		for( int y = 0; y < height; ++y ) {
 			final BlockPos pos = position.up(y);
 			final IBlockState blockState = world.getBlockState(pos);
 			if( blockState.getBlock().isReplaceable(world, pos) || blockState.getBlock().isLeaves(blockState, world, pos) ) {
