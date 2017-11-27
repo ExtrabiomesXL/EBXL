@@ -11,6 +11,7 @@ public enum BiomeSettings {
 	GREENHILLS		(BiomeGreenHills.class,		Weights.LIGHT),
 	GREENSWAMP		(BiomeGreenSwamp.class),
 	MEADOW			(BiomeMeadow.class,			Weights.HEAVY),
+	RAINFOREST		(BiomeRainforest.class,		Weights.HEAVY),
 	REDROCKDESERT	(BiomeRedRockDesert.class),
 	REDWOODFOREST	(BiomeRedwoodForest.class,	Weights.LIGHT),
 	WASTELAND		(BiomeWasteland.class,		Weights.LIGHT),
