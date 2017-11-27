@@ -10,8 +10,8 @@ public class BiomeWoodlands extends ExtraBiome {
 
 	public static BiomeProperties props = new BiomeProperties("Woodlands");
 	static {
-		props.setBaseHeight(Biomes.FOREST.getBaseHeight());
-		props.setHeightVariation(Biomes.FOREST.getHeightVariation());
+		props.setBaseHeight(0.3F);
+		props.setHeightVariation(0.1F);
 		props.setTemperature(Biomes.FOREST.getTemperature());
 		props.setRainfall(Biomes.FOREST.getRainfall());
 	}
@@ -20,10 +20,17 @@ public class BiomeWoodlands extends ExtraBiome {
 		super(settings, props);
 		this.type = BiomeType.COOL;
 		
+		// setColor(0x85B53E);
+		
 		// In 1.7 was: FOREST
 		dictTypes.add(Type.DENSE);
 		dictTypes.add(Type.LUSH);
 		dictTypes.add(Type.FOREST);
+		
+		this.setFoliageColor(1.0, 1.0);
+		this.setGrassColor(1.0, 1.0);
+		
+		spawnableCreatureList.add(new SpawnListEntry(net.minecraft.entity.passive.EntityWolf.class, 5, 4, 4));
 	}
 
 }

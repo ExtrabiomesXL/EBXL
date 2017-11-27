@@ -1,5 +1,7 @@
 package com.extrabiomes.ebxl.proxy;
 
+import com.extrabiomes.ebxl.handlers.BlockHandler;
+
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -11,11 +13,13 @@ public class ClientProxy extends CommonProxy {
 	@Override
 	public void preInit(FMLPreInitializationEvent event) {
 		super.preInit(event);
-		log.trace("client.preInit");
+		log.info("client.preInit");
 	}
 
 	@SubscribeEvent
 	public static void registerModels(ModelRegistryEvent event) {
-		log.trace("client.registerModels");
+		log.info("client.registerModels");
+		BlockHandler.initModels();
+		// ItemHandler.initModels();
 	}
 }

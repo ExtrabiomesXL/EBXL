@@ -1,0 +1,78 @@
+This update to 1.12 is mean as EBXL's 4.0 release. A few features will be
+trimmed, and a few will be added - but for the most part, it is meant to be
+simply a cleanup and port of the old 1.7 version.
+
+This is a brief snapshot of my plans as of late Nov '17 (one week into dev on
+the update). - Al
+
+Biomes
+----------
+Confirmed
+ - Autumn Woods
+ - Green Hills
+ - Green Swamp
+ - Meadow
+ - Red Rock Desert (was "Mountain Ridge", may go with "Red Rock Ridge" instead?)
+ - Redwood Forest
+ - Wasteland
+ - Woodlands
+ - Rainforest
+
+Maybe
+ - Alpine
+
+The remainder of the biomes in the original mod are likely not going to be kept
+around as they are either implemented in vanilla now or simply not unique enough
+to warrant keeping around. This issue is still very much in flux.
+
+Blocks
+----------
+Confirmed
+ - Red Rock (stone & cobble)
+ - Cracked Sand
+ - Quicksand
+ - Flowers (likely ~30 varieties)
+ - Gloriosa vines, Eelgrass, cattails
+ - Strawberries
+
+New (Maybe)
+ - Wild onions and rice
+
+Trees
+----------
+Confirmed
+ - Autumn (4 variants)
+ - Redwood
+ - Cypress, Bald Cypress
+ - Rainbow Eucalyptus
+ - Japanese Maple
+ - Sakura
+
+New (Maybe)
+ - Willow
+ - Reduce autumn to a single sapling type and randomly determine leaf color
+ - Add cherries as a drop from sakura leaves
+
+Shrubs are not currently planned for inclusion.
+
+The fir tree is in question currently, as it needs a lot of help. Once the mod
+is up and running again, serious consideration of new features will be made,
+including a cleanup pass on fir rendering and the addition of other trees from
+our library of legacy inherited assets.
+
+Recipes & Misc Features
+----------
+Confirmed
+ - Slabs & Staircases
+ - Dyes from flowers
+ 
+Maybe
+ - Chocolate (and chocolate strawberries)
+ - Doors
+ - Fences
+
+I would consider doing custom chests, but there was already an addon mod from
+the community that did this with our wood. I might roll it in first party, but
+it's low priority if it happens.
+
+The scarecrow is not currently planned for re-implementation.

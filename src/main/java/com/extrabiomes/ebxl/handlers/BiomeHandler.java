@@ -10,6 +10,12 @@ import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
 public class BiomeHandler {
 
+	public static void registerAllBiomes() {
+		for( BiomeSettings settings : BiomeSettings.values() ) {
+			registerBiome(settings);
+		}
+	}
+	
 	public static void registerBiome(BiomeSettings settings) {
 		final ExtraBiome biome;
 		try {

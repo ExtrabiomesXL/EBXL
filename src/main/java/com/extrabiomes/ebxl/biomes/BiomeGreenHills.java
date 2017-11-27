@@ -10,10 +10,10 @@ public class BiomeGreenHills extends ExtraBiome {
 
 	public static BiomeProperties props = new BiomeProperties("Green Hills");
 	static {
-		props.setBaseHeight(Biomes.EXTREME_HILLS_WITH_TREES.getBaseHeight());
-		props.setHeightVariation(Biomes.EXTREME_HILLS_WITH_TREES.getHeightVariation());
-		props.setTemperature(Biomes.EXTREME_HILLS_WITH_TREES.getTemperature());
-		props.setRainfall(Biomes.EXTREME_HILLS_WITH_TREES.getRainfall());
+		props.setBaseHeight(0.9F);
+		props.setHeightVariation(0.3F);
+		props.setTemperature(Biomes.FOREST.getTemperature() - 0.1F);
+		props.setRainfall(Biomes.FOREST.getRainfall() + 0.1F);
 	}
 	
 	public BiomeGreenHills(BiomeSettings settings) {
@@ -24,6 +24,12 @@ public class BiomeGreenHills extends ExtraBiome {
 		dictTypes.add(Type.WET);
 		dictTypes.add(Type.LUSH);
 		dictTypes.add(Type.HILLS);
+		
+		// this is a light slightly bluish green
+		// setColor(0x68C474);
+		
+		this.setFoliageColor(0.7, 0.8);
+		this.setGrassColor(0.7, 0.8);
 	}
 
 }

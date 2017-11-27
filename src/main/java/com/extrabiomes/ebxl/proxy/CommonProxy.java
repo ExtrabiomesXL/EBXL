@@ -4,7 +4,10 @@ import org.apache.logging.log4j.Logger;
 
 import com.extrabiomes.ebxl.Extrabiomes;
 import com.extrabiomes.ebxl.config.Config;
+import com.extrabiomes.ebxl.handlers.BiomeHandler;
+import com.extrabiomes.ebxl.handlers.BlockHandler;
 import com.extrabiomes.ebxl.handlers.ConfigHandler;
+import com.extrabiomes.ebxl.handlers.ItemHandler;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -23,16 +26,16 @@ public class CommonProxy {
 
 	public void preInit(FMLPreInitializationEvent event) {
 		log = Extrabiomes.log;
-		log.trace("proxy.preInit");
+		log.info("** proxy.preInit");
 		ConfigHandler.init(event);
 	}
 
 	public void init(FMLInitializationEvent event) {
-		log.trace("proxy.init");
+		log.info("** proxy.init");
 	}
 
 	public void postInit(FMLPostInitializationEvent event) {
-		log.trace("proxy.postInit");
+		log.info("** proxy.postInit");
 		ConfigHandler.postInit();
 	}
 	
@@ -43,12 +46,15 @@ public class CommonProxy {
 
     @SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event) {
-    	log.trace("proxy.registerBlocks");
+    	log.info("** proxy.registerBlocks");
+    	BlockHandler.init(event);
+    	BiomeHandler.registerAllBiomes();
     }
 
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event) {
-    	log.trace("proxy.registerItems");
+    	log.info("** proxy.registerItems");
+    	ItemHandler.init(event);
     }
 
 }
