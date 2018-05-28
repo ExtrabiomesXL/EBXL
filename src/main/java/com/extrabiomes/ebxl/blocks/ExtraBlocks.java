@@ -6,4 +6,5 @@ public class ExtraBlocks {
 	public static Block redrock;
 	public static Block crackedsand;
 	public static Block logAutumn;
+	public static Block leafAutumn;
 }

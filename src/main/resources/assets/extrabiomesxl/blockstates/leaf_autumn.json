@@ -1,0 +1,15 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "leaves",
+    "textures": { "all": "extrabiomesxl:blocks/leavesyellowautumnfancy" }
+  },
+  "variants": {
+    "normal": [{}],
+    "inventory": { "transform": "forge:default-block" },
+    "check_decay=true,decayable=true": [{}],
+    "check_decay=true,decayable=false": [{}],
+    "check_decay=false,decayable=true": [{}],
+    "check_decay=false,decayable=false": [{}]
+  }
+}

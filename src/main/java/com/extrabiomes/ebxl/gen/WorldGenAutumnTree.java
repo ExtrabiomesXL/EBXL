@@ -18,7 +18,7 @@ public class WorldGenAutumnTree extends WorldGenAbstractTree {
 	}
 	
     private static Block     trunkBlock                 = ExtraBlocks.logAutumn;
-    private static Block     leafBlock					= Blocks.LEAVES;
+    private static Block     leafBlock					= ExtraBlocks.leafAutumn;
     private static final int BASE_HEIGHT                = 5; // was 4
     private static final int CANOPY_HEIGHT              = 3;
     private static final int CANOPY_RADIUS_EXTRA_RADIUS = 0;

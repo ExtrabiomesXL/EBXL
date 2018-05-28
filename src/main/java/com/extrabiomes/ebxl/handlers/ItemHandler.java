@@ -22,6 +22,9 @@ public class ItemHandler {
 		
 		register(reg, ExtraBlocks.logAutumn);
 		ExtraBlocks.logAutumn.setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
+		
+		register(reg, ExtraBlocks.leafAutumn);
+		ExtraBlocks.leafAutumn.setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
 	}
 	
 	public static void register(IForgeRegistry<Item> reg, Item item) {

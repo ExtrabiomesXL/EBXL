@@ -16,6 +16,7 @@ public class BlockHandler {
 		ExtraBlocks.redrock = register(reg, new BlockRedRock());
 		ExtraBlocks.crackedsand = register(reg, new BlockCrackedSand());
 		ExtraBlocks.logAutumn = register(reg, new BlockLogAutumn());
+		ExtraBlocks.leafAutumn = register(reg, new BlockLeavesAutumn());
 		Extrabiomes.log.info("-- blocks registered");
 	}
 	
@@ -29,6 +30,7 @@ public class BlockHandler {
 		((BlockRedRock)ExtraBlocks.redrock).initModel();
 		((BlockCrackedSand)ExtraBlocks.crackedsand).initModel();
 		((BlockLogAutumn)ExtraBlocks.logAutumn).initModel();
+		((BlockLeavesAutumn)ExtraBlocks.leafAutumn).initModel();
 		Extrabiomes.log.info("-- models registered");
 	}
 
