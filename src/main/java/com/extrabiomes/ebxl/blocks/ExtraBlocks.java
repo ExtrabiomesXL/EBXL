@@ -7,6 +7,13 @@ public class ExtraBlocks {
 	public static Block crackedsand;
 	// autumn trees
 	public static Block logAutumn;
-	public static Block leafAutumn;
-	public static Block saplingAutumn;
+	public static Block leafAutumn_brown;
+	public static Block leafAutumn_orange;
+	public static Block leafAutumn_red;
+	public static Block leafAutumn_yellow;
+	public static Block saplingAutumn_brown;
+	public static Block saplingAutumn_orange;
+	public static Block saplingAutumn_red;
+	public static Block saplingAutumn_yellow;
+
 }

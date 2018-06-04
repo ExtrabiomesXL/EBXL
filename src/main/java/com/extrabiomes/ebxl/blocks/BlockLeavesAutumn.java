@@ -1,13 +1,17 @@
 package com.extrabiomes.ebxl.blocks;
 
 import com.extrabiomes.ebxl.Extrabiomes;
+import com.extrabiomes.ebxl.blocks.BlockSaplingAutumn.TreeVariant;
 
 public class BlockLeavesAutumn extends BlockExtraLeaves {
 
-	public BlockLeavesAutumn() {
+	public final TreeVariant variant;
+	public BlockLeavesAutumn(TreeVariant variant) {
 		super();
-		setUnlocalizedName( Extrabiomes.MODID + ".block.leaf_autumn" );
-		setRegistryName( "leaf_autumn" );
+		this.variant = variant;
+		final String name = "leaf_autumn_"+variant.toString().toLowerCase();
+		setUnlocalizedName( Extrabiomes.MODID + ".block." + name );
+		setRegistryName( name );
 	}
 	
 }

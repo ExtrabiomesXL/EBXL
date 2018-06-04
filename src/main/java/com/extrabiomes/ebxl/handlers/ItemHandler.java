@@ -23,11 +23,23 @@ public class ItemHandler {
 		register(reg, ExtraBlocks.logAutumn);
 		ExtraBlocks.logAutumn.setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
 		
-		register(reg, ExtraBlocks.leafAutumn);
-		ExtraBlocks.leafAutumn.setCreativeTab(CreativeTabs.DECORATIONS);
+		register(reg, ExtraBlocks.leafAutumn_brown);
+		ExtraBlocks.leafAutumn_brown.setCreativeTab(CreativeTabs.DECORATIONS);
+		register(reg, ExtraBlocks.leafAutumn_orange);
+		ExtraBlocks.leafAutumn_orange.setCreativeTab(CreativeTabs.DECORATIONS);
+		register(reg, ExtraBlocks.leafAutumn_red);
+		ExtraBlocks.leafAutumn_red.setCreativeTab(CreativeTabs.DECORATIONS);
+		register(reg, ExtraBlocks.leafAutumn_yellow);
+		ExtraBlocks.leafAutumn_yellow.setCreativeTab(CreativeTabs.DECORATIONS);
 		
-		register(reg, ExtraBlocks.saplingAutumn);
-		ExtraBlocks.saplingAutumn.setCreativeTab(CreativeTabs.DECORATIONS);
+		register(reg, ExtraBlocks.saplingAutumn_brown);
+		ExtraBlocks.saplingAutumn_brown.setCreativeTab(CreativeTabs.DECORATIONS);
+		register(reg, ExtraBlocks.saplingAutumn_orange);
+		ExtraBlocks.saplingAutumn_orange.setCreativeTab(CreativeTabs.DECORATIONS);
+		register(reg, ExtraBlocks.saplingAutumn_red);
+		ExtraBlocks.saplingAutumn_red.setCreativeTab(CreativeTabs.DECORATIONS);
+		register(reg, ExtraBlocks.saplingAutumn_yellow);
+		ExtraBlocks.saplingAutumn_yellow.setCreativeTab(CreativeTabs.DECORATIONS);
 	}
 	
 	public static void register(IForgeRegistry<Item> reg, Item item) {
