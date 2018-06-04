@@ -7,8 +7,6 @@ import com.extrabiomes.ebxl.gen.WorldGenAutumnTree;
 
 import net.minecraft.entity.passive.EntityWolf;
 import net.minecraft.init.Biomes;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import net.minecraftforge.common.BiomeDictionary.Type;
 import net.minecraftforge.common.BiomeManager.BiomeType;
@@ -20,8 +18,8 @@ public class BiomeAutumnWoods extends ExtraBiome {
 	public static BiomeProperties props = new BiomeProperties("Autumn Woods");
 	static {
 		props.setBaseHeight(0.5F);
-		props.setHeightVariation(0.4F);		
-		props.setTemperature(Biomes.PLAINS.getTemperature());
+		props.setHeightVariation(0.4F);
+		props.setTemperature(Biomes.PLAINS.getDefaultTemperature());
 		props.setRainfall(Biomes.PLAINS.getRainfall());
 		props.setSnowEnabled();
 	}

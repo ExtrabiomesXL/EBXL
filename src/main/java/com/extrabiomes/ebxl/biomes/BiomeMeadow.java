@@ -13,7 +13,7 @@ public class BiomeMeadow extends ExtraBiome {
 	static {
 		props.setBaseHeight(0.1F);
 		props.setHeightVariation(0.03125F);
-		props.setTemperature(Biomes.PLAINS.getTemperature());
+		props.setTemperature(Biomes.PLAINS.getDefaultTemperature());
 		props.setRainfall(Biomes.PLAINS.getRainfall());
 	}
 	

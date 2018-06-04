@@ -13,7 +13,7 @@ public class BiomeGreenSwamp extends ExtraBiome {
 	static {
 		props.setBaseHeight(0.05F);
 		props.setHeightVariation(0.15F);
-		props.setTemperature(Biomes.SWAMPLAND.getTemperature() - 0.1F);
+		props.setTemperature(Biomes.SWAMPLAND.getDefaultTemperature() - 0.1F);
 		props.setRainfall(Biomes.SWAMPLAND.getRainfall());
 	}
 	

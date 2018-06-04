@@ -2,7 +2,6 @@ package com.extrabiomes.ebxl;
 
 import org.apache.logging.log4j.Logger;
 
-import com.extrabiomes.ebxl.config.Config;
 import com.extrabiomes.ebxl.config.DebugSettings;
 import com.extrabiomes.ebxl.proxy.CommonProxy;
 

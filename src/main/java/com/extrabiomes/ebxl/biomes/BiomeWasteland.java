@@ -4,7 +4,6 @@ import com.extrabiomes.ebxl.blocks.ExtraBlocks;
 import com.extrabiomes.ebxl.config.BiomeSettings;
 
 import net.minecraft.init.Biomes;
-import net.minecraft.init.Blocks;
 import net.minecraftforge.common.BiomeDictionary.Type;
 import net.minecraftforge.common.BiomeManager.BiomeType;
 
@@ -14,7 +13,7 @@ public class BiomeWasteland extends ExtraBiome {
 	static {
 		props.setBaseHeight(0.1F);
 		props.setHeightVariation(0.0F);
-		props.setTemperature(Biomes.DESERT.getTemperature());
+		props.setTemperature(Biomes.DESERT.getDefaultTemperature());
 		props.setRainfall(Biomes.DESERT.getRainfall());
 		props.setRainDisabled();
 		props.setWaterColor(0xF08000);

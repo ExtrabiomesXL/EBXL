@@ -12,7 +12,7 @@ public class BiomeGreenHills extends ExtraBiome {
 	static {
 		props.setBaseHeight(0.9F);
 		props.setHeightVariation(0.3F);
-		props.setTemperature(Biomes.FOREST.getTemperature() - 0.1F);
+		props.setTemperature(Biomes.FOREST.getDefaultTemperature() - 0.1F);
 		props.setRainfall(Biomes.FOREST.getRainfall() + 0.1F);
 	}
 	

@@ -12,7 +12,7 @@ public class BiomeWoodlands extends ExtraBiome {
 	static {
 		props.setBaseHeight(0.3F);
 		props.setHeightVariation(0.1F);
-		props.setTemperature(Biomes.FOREST.getTemperature());
+		props.setTemperature(Biomes.FOREST.getDefaultTemperature());
 		props.setRainfall(Biomes.FOREST.getRainfall());
 	}
 	

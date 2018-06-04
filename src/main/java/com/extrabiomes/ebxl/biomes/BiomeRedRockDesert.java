@@ -19,7 +19,7 @@ public class BiomeRedRockDesert extends ExtraBiome {
 		// NB: I had a todo note in 1.7 to validate these height numbers
 		props.setBaseHeight(1.7F);
 		props.setHeightVariation(-0.1F);
-		props.setTemperature(Biomes.DESERT_HILLS.getTemperature());
+		props.setTemperature(Biomes.DESERT_HILLS.getDefaultTemperature());
 		props.setRainfall(Biomes.DESERT_HILLS.getRainfall());
 		props.setRainDisabled();
 	}
