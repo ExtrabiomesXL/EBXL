@@ -2,6 +2,7 @@ package com.extrabiomes.ebxl.blocks;
 
 import java.util.List;
 
+import com.extrabiomes.ebxl.Extrabiomes;
 import com.google.common.collect.Lists;
 
 import net.minecraft.block.BlockLeaves;
@@ -25,6 +26,7 @@ public class BlockExtraLeaves extends BlockLeaves {
 
 	public BlockExtraLeaves() {
 		super();
+		Extrabiomes.proxy.setFancy(this);
 		setDefaultState(this.getDefaultState().withProperty(CHECK_DECAY, true).withProperty(DECAYABLE, true));
 	}
 	

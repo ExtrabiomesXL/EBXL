@@ -3,6 +3,7 @@ package com.extrabiomes.ebxl.proxy;
 import org.apache.logging.log4j.Logger;
 
 import com.extrabiomes.ebxl.Extrabiomes;
+import com.extrabiomes.ebxl.blocks.BlockExtraLeaves;
 import com.extrabiomes.ebxl.config.Config;
 import com.extrabiomes.ebxl.handlers.BiomeHandler;
 import com.extrabiomes.ebxl.handlers.BlockHandler;
@@ -56,5 +57,10 @@ public class CommonProxy {
     	log.info("** proxy.registerItems");
     	ItemHandler.init(event);
     }
+
+	public void setFancy(BlockExtraLeaves block) {
+		// Method for setting leaf blocks to fancy
+		// NB: apparently must be outside of the block def itself because of sidedness
+	}
 
 }

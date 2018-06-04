@@ -1,5 +1,6 @@
 package com.extrabiomes.ebxl.proxy;
 
+import com.extrabiomes.ebxl.blocks.BlockExtraLeaves;
 import com.extrabiomes.ebxl.handlers.BlockHandler;
 
 import net.minecraftforge.client.event.ModelRegistryEvent;
@@ -21,5 +22,10 @@ public class ClientProxy extends CommonProxy {
 		log.info("client.registerModels");
 		BlockHandler.initModels();
 		// ItemHandler.initModels();
+	}
+	
+	@Override
+	public void setFancy(BlockExtraLeaves block) {
+		block.setGraphicsLevel(true);
 	}
 }

@@ -4,6 +4,7 @@ import com.extrabiomes.ebxl.Extrabiomes;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLog;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockStateContainer;
@@ -19,11 +20,15 @@ import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+// TODO: Make BlockExtraLog to import
 public class BlockLogAutumn extends Block {
 	public static final PropertyEnum<BlockLog.EnumAxis> LOG_AXIS = PropertyEnum.<BlockLog.EnumAxis>create("axis", BlockLog.EnumAxis.class);
 	
 	public BlockLogAutumn() {
 		super(Material.WOOD);
+        this.setHardness(2.0F);
+        this.setSoundType(SoundType.WOOD);
+
 		setUnlocalizedName( Extrabiomes.MODID + ".block.log_autumn" );
 		setRegistryName("log_autumn");
 		setDefaultState( this.blockState.getBaseState().withProperty(LOG_AXIS, BlockLog.EnumAxis.Y) );
