@@ -2,6 +2,7 @@ package com.extrabiomes.ebxl.gen;
 
 import java.util.Random;
 
+import com.extrabiomes.ebxl.Extrabiomes;
 import com.extrabiomes.ebxl.blocks.ExtraBlocks;
 
 import net.minecraft.block.Block;
@@ -15,6 +16,10 @@ public class WorldGenAutumnTree extends WorldGenAbstractTree {
 
 	public WorldGenAutumnTree(boolean notify) {
 		super(notify);
+		if( trunkBlock == null || leafBlock == null ) {
+			Extrabiomes.log.error(this.getClass().getSimpleName()+": null tree parts, likely prematurely initialized");
+			throw new RuntimeException("Leaf/Trunk blocks not correctly initialized in time for Tree generator.");
+		}
 	}
 	
     private static Block     trunkBlock                 = ExtraBlocks.logAutumn;
