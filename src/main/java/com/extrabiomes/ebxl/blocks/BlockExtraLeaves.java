@@ -27,9 +27,8 @@ public class BlockExtraLeaves extends BlockLeaves {
 
 	private BlockExtraSapling sapling;
 	
-	public BlockExtraLeaves(BlockExtraSapling sapling) {
+	public BlockExtraLeaves() {
 		super();
-		this.setSapling(sapling);
 		Extrabiomes.proxy.setFancy(this);
 		setDefaultState(this.getDefaultState().withProperty(CHECK_DECAY, true).withProperty(DECAYABLE, true));
 	}
@@ -81,6 +80,10 @@ public class BlockExtraLeaves extends BlockLeaves {
     @Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune) {
     	return Item.getItemFromBlock(sapling);
+    }
+    @Override
+    public int damageDropped(IBlockState state) {
+    	return 0;
     }
 
     // hand-placed leaves cannot decay

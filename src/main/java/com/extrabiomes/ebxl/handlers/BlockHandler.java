@@ -16,9 +16,10 @@ public class BlockHandler {
 		ExtraBlocks.redrock = register(reg, new BlockRedRock());
 		ExtraBlocks.crackedsand = register(reg, new BlockCrackedSand());
 		
-		ExtraBlocks.saplingAutumn = register(reg, new BlockSaplingAutumn());
 		ExtraBlocks.logAutumn = register(reg, new BlockLogAutumn());
-		ExtraBlocks.leafAutumn = register(reg, new BlockLeavesAutumn((BlockExtraSapling)ExtraBlocks.saplingAutumn));
+		ExtraBlocks.leafAutumn = register(reg, new BlockLeavesAutumn());
+		ExtraBlocks.saplingAutumn = register(reg, new BlockSaplingAutumn());
+		((BlockLeavesAutumn)ExtraBlocks.leafAutumn).setSapling((BlockExtraSapling)ExtraBlocks.saplingAutumn);
 		
 		Extrabiomes.log.info("-- blocks registered");
 	}

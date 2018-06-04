@@ -10,17 +10,20 @@ import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.event.terraingen.TerrainGen;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BlockExtraSapling extends BlockBush implements IGrowable {
 
 	public static final PropertyInteger STAGE = PropertyInteger.create("stage", 0, 1);
+	
+	protected WorldGenAbstractTree treeGen = null;
 	
 	public BlockExtraSapling() {
 		setHardness(0.0F);
@@ -31,16 +34,36 @@ public class BlockExtraSapling extends BlockBush implements IGrowable {
 	public boolean canGrow(World world, BlockPos pos, IBlockState state, boolean isClient) {
 		return true;
 	}
+	
 
 	@Override
 	public boolean canUseBonemeal(World world, Random rand, BlockPos pos, IBlockState state) {
 		// NB: jabelar does a 45% chance here
+		return rand.nextFloat() < 0.45F;
 		// TODO: look at vanilla
-		return true;
+		//return true;
 	}
 
 	@Override
 	public void grow(World world, Random rand, BlockPos pos, IBlockState state) {
+		if( state.getValue(STAGE).intValue() == 0 ) {
+			world.setBlockState(pos, state.cycleProperty(STAGE), 4);
+		} else {
+			generateTree(world, rand, pos, state);
+		}
+	}
+	
+	public void generateTree(World world, Random rand, BlockPos pos, IBlockState state) {
+		if( treeGen == null || !TerrainGen.saplingGrowTree(world, rand, pos) ) return;
+		
+		world.setBlockToAir(pos);
+		treeGen.generate(world, rand, pos);
+	}
+	public WorldGenAbstractTree getTreeGen() {
+		return treeGen;
+	}
+	public void setTreeGen(WorldGenAbstractTree treeGen) {
+		this.treeGen = treeGen;
 	}
 	
 	// properties
