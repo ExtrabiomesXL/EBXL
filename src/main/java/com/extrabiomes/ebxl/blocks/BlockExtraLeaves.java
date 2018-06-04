@@ -1,6 +1,7 @@
 package com.extrabiomes.ebxl.blocks;
 
 import java.util.List;
+import java.util.Random;
 
 import com.extrabiomes.ebxl.Extrabiomes;
 import com.google.common.collect.Lists;
@@ -24,8 +25,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BlockExtraLeaves extends BlockLeaves {
 
-	public BlockExtraLeaves() {
+	private BlockExtraSapling sapling;
+	
+	public BlockExtraLeaves(BlockExtraSapling sapling) {
 		super();
+		this.setSapling(sapling);
 		Extrabiomes.proxy.setFancy(this);
 		setDefaultState(this.getDefaultState().withProperty(CHECK_DECAY, true).withProperty(DECAYABLE, true));
 	}
@@ -74,17 +78,23 @@ public class BlockExtraLeaves extends BlockLeaves {
         return meta;
     }
 
-    /*
     @Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune) {
-    	// TODO: pass on an actual registered sapling item
+    	return Item.getItemFromBlock(sapling);
     }
-    */
 
     // hand-placed leaves cannot decay
     @Override
     public IBlockState getStateForPlacement(World world, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer, EnumHand hand) {
         return super.getStateForPlacement(world, pos, facing, hitX, hitY, hitZ, meta, placer, hand).withProperty(DECAYABLE, false);
     }
+
+	public BlockExtraSapling getSapling() {
+		return sapling;
+	}
+
+	public void setSapling(BlockExtraSapling sapling) {
+		this.sapling = sapling;
+	}
 
 }

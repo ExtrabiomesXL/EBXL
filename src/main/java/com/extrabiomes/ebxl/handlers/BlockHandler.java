@@ -15,8 +15,11 @@ public class BlockHandler {
 		final IForgeRegistry<Block> reg = event.getRegistry();
 		ExtraBlocks.redrock = register(reg, new BlockRedRock());
 		ExtraBlocks.crackedsand = register(reg, new BlockCrackedSand());
+		
+		ExtraBlocks.saplingAutumn = register(reg, new BlockSaplingAutumn());
 		ExtraBlocks.logAutumn = register(reg, new BlockLogAutumn());
-		ExtraBlocks.leafAutumn = register(reg, new BlockLeavesAutumn());
+		ExtraBlocks.leafAutumn = register(reg, new BlockLeavesAutumn((BlockExtraSapling)ExtraBlocks.saplingAutumn));
+		
 		Extrabiomes.log.info("-- blocks registered");
 	}
 	
@@ -31,6 +34,7 @@ public class BlockHandler {
 		((BlockCrackedSand)ExtraBlocks.crackedsand).initModel();
 		((BlockLogAutumn)ExtraBlocks.logAutumn).initModel();
 		((BlockLeavesAutumn)ExtraBlocks.leafAutumn).initModel();
+		((BlockSaplingAutumn)ExtraBlocks.saplingAutumn).initModel();
 		Extrabiomes.log.info("-- models registered");
 	}
 
