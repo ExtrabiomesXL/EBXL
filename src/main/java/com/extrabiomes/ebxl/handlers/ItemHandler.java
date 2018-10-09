@@ -29,12 +29,20 @@ public class ItemHandler {
 		ExtraBlocks.logFir.setCreativeTab(Extrabiomes.creativeTab);
 		register(reg, ExtraBlocks.logRedwood);
 		ExtraBlocks.logRedwood.setCreativeTab(Extrabiomes.creativeTab);
+		register(reg, ExtraBlocks.logCypress_regular);
+		ExtraBlocks.logCypress_regular.setCreativeTab(Extrabiomes.creativeTab);
+		register(reg, ExtraBlocks.logCypress_bald);
+		ExtraBlocks.logCypress_bald.setCreativeTab(Extrabiomes.creativeTab);
+		register(reg, ExtraBlocks.logCypress_bald_elbow);
+		ExtraBlocks.logCypress_bald_elbow.setCreativeTab(Extrabiomes.creativeTab);
 		register(reg, ExtraBlocks.quarterLog_fir);
 		ExtraBlocks.quarterLog_fir.setCreativeTab(Extrabiomes.creativeTab);
 		register(reg, ExtraBlocks.quarterLog_redwood);
 		ExtraBlocks.quarterLog_redwood.setCreativeTab(Extrabiomes.creativeTab);
 		register(reg, ExtraBlocks.quarterLog_oak);
 		ExtraBlocks.quarterLog_oak.setCreativeTab(Extrabiomes.creativeTab);
+		register(reg, ExtraBlocks.quarterLog_bald_cypress);
+		ExtraBlocks.quarterLog_bald_cypress.setCreativeTab(Extrabiomes.creativeTab);
 
 		register(reg, ExtraBlocks.leafAutumn_brown);
 		ExtraBlocks.leafAutumn_brown.setCreativeTab(Extrabiomes.creativeTab);
@@ -48,6 +56,10 @@ public class ItemHandler {
 		ExtraBlocks.leafFir.setCreativeTab(Extrabiomes.creativeTab);
 		register(reg, ExtraBlocks.leafRedwood);
 		ExtraBlocks.leafRedwood.setCreativeTab(Extrabiomes.creativeTab);
+		register(reg, ExtraBlocks.leafCypress_regular);
+		ExtraBlocks.leafCypress_regular.setCreativeTab(Extrabiomes.creativeTab);
+		register(reg, ExtraBlocks.leafCypress_bald);
+		ExtraBlocks.leafCypress_bald.setCreativeTab(Extrabiomes.creativeTab);
 
 		register(reg, ExtraBlocks.saplingAutumn_brown);
 		ExtraBlocks.saplingAutumn_brown.setCreativeTab(Extrabiomes.creativeTab);
@@ -61,6 +73,10 @@ public class ItemHandler {
 		ExtraBlocks.saplingFir.setCreativeTab(Extrabiomes.creativeTab);
 		register(reg, ExtraBlocks.saplingRedwood);
 		ExtraBlocks.saplingRedwood.setCreativeTab(Extrabiomes.creativeTab);
+		register(reg, ExtraBlocks.saplingCypress_regular);
+		ExtraBlocks.saplingCypress_regular.setCreativeTab(Extrabiomes.creativeTab);
+		register(reg, ExtraBlocks.saplingCypress_bald);
+		ExtraBlocks.saplingCypress_bald.setCreativeTab(Extrabiomes.creativeTab);
 	}
 	
 	public static void register(IForgeRegistry<Item> reg, Item item) {

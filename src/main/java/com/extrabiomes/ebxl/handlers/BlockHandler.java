@@ -5,6 +5,8 @@ import com.extrabiomes.ebxl.blocks.*;
 import com.extrabiomes.ebxl.blocks.BlockSaplingAutumn.TreeVariant;
 import com.extrabiomes.ebxl.blocks.BlockQuarterLog.QuarterLogVarient;
 import com.extrabiomes.ebxl.gen.WorldGenAutumnTree;
+import com.extrabiomes.ebxl.blocks.BlockLogCypress.CypressLogVariant;
+import com.extrabiomes.ebxl.blocks.BlockSaplingCypress.TreeVariantCypress;
 
 import net.minecraft.block.Block;
 import net.minecraftforge.event.RegistryEvent.Register;
@@ -23,8 +25,12 @@ public class BlockHandler {
 		ExtraBlocks.quarterLog_fir = register(reg, new BlockQuarterLog(QuarterLogVarient.FIR));
 		ExtraBlocks.quarterLog_oak = register(reg, new BlockQuarterLog(QuarterLogVarient.OAK));
 		ExtraBlocks.quarterLog_redwood = register(reg, new BlockQuarterLog(QuarterLogVarient.REDWOOD));
+		ExtraBlocks.quarterLog_bald_cypress = register(reg, new BlockQuarterLog(QuarterLogVarient.BALD_CYPRESS));
 		ExtraBlocks.logFir = register(reg, new BlockLogFir());
 		ExtraBlocks.logRedwood = register(reg, new BlockLogRedwood());
+		ExtraBlocks.logCypress_regular = register(reg, new BlockLogCypress(CypressLogVariant.REGULAR));
+		ExtraBlocks.logCypress_bald = register(reg, new BlockLogCypress(CypressLogVariant.BALD));
+		ExtraBlocks.logCypress_bald_elbow = register(reg, new BlockLogCypress(CypressLogVariant.BALD_ELBOW));
 
 
 		ExtraBlocks.leafAutumn_brown = register(reg, new BlockLeavesAutumn(TreeVariant.BROWN));
@@ -33,6 +39,8 @@ public class BlockHandler {
 		ExtraBlocks.leafAutumn_yellow = register(reg, new BlockLeavesAutumn(TreeVariant.YELLOW));
 		ExtraBlocks.leafFir = register(reg, new BlockLeavesFir());
 		ExtraBlocks.leafRedwood = register(reg, new BlockLeavesRedwood());
+		ExtraBlocks.leafCypress_regular = register(reg, new BlockLeavesCypress(TreeVariantCypress.REGULAR));
+		ExtraBlocks.leafCypress_bald = register(reg, new BlockLeavesCypress(TreeVariantCypress.BALD));
 
 		WorldGenAutumnTree.initLeaves();
 		
@@ -50,8 +58,15 @@ public class BlockHandler {
 
 		ExtraBlocks.saplingFir = register(reg, new BlockSaplingFir());
 		((BlockLeavesFir)ExtraBlocks.leafFir).setSapling((BlockExtraSapling)ExtraBlocks.saplingFir);
+
 		ExtraBlocks.saplingRedwood = register(reg, new BlockSaplingRedwood());
 		((BlockLeavesRedwood)ExtraBlocks.leafRedwood).setSapling((BlockExtraSapling)ExtraBlocks.saplingRedwood);
+
+		ExtraBlocks.saplingCypress_regular = register(reg, new BlockSaplingCypress(TreeVariantCypress.REGULAR));
+		((BlockLeavesCypress)ExtraBlocks.leafCypress_regular).setSapling((BlockExtraSapling)ExtraBlocks.saplingCypress_regular);
+
+		ExtraBlocks.saplingCypress_bald = register(reg, new BlockSaplingCypress(TreeVariantCypress.BALD));
+		((BlockLeavesCypress)ExtraBlocks.leafCypress_bald).setSapling((BlockExtraSapling)ExtraBlocks.saplingCypress_bald);
 
 		Extrabiomes.log.info("-- blocks registered");
 	}
@@ -71,7 +86,11 @@ public class BlockHandler {
 		((BlockQuarterLog)ExtraBlocks.quarterLog_fir).initModel();
 		((BlockQuarterLog)ExtraBlocks.quarterLog_redwood).initModel();
 		((BlockQuarterLog)ExtraBlocks.quarterLog_oak).initModel();
-		
+		((BlockQuarterLog)ExtraBlocks.quarterLog_bald_cypress).initModel();
+		((BlockLogCypress)ExtraBlocks.logCypress_regular).initModel();
+		((BlockLogCypress)ExtraBlocks.logCypress_bald).initModel();
+		((BlockLogCypress)ExtraBlocks.logCypress_bald_elbow).initModel();
+
 		((BlockLeavesAutumn)ExtraBlocks.leafAutumn_brown).initModel();
 		((BlockSaplingAutumn)ExtraBlocks.saplingAutumn_brown).initModel();
 		((BlockLeavesAutumn)ExtraBlocks.leafAutumn_orange).initModel();
@@ -84,6 +103,10 @@ public class BlockHandler {
 		((BlockSaplingFir)ExtraBlocks.saplingFir).initModel();
 		((BlockLeavesRedwood)ExtraBlocks.leafRedwood).initModel();
 		((BlockSaplingRedwood)ExtraBlocks.saplingRedwood).initModel();
+		((BlockLeavesCypress)ExtraBlocks.leafCypress_regular).initModel();
+		((BlockSaplingCypress)ExtraBlocks.saplingCypress_regular).initModel();
+		((BlockLeavesCypress)ExtraBlocks.leafCypress_bald).initModel();
+		((BlockSaplingCypress)ExtraBlocks.saplingCypress_bald).initModel();
 
 		Extrabiomes.log.info("-- models registered");
 	}
