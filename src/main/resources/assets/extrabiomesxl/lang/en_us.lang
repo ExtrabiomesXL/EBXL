@@ -1,0 +1,28 @@
+itemGroup.extrabiomesxl=Extra Biomes XL
+#logs
+tile.extrabiomesxl.block.log_autumn.name=Autumn Log
+tile.extrabiomesxl.log_quarter_fir.name=Fir Quarter Log
+tile.extrabiomesxl.log_quarter_redwood.name=Redwood Quarter Log
+tile.extrabiomesxl.log_quarter_oak.name=Oak Quarter Log
+tile.extrabiomesxl.block.log_fir.name=Fir Log
+tile.extrabiomesxl.block.log_redwood.name=Redwood Log
+
+#saplings
+tile.extrabiomesxl.block.sapling_autumn_brown.name=Umber Autumn Sapling
+tile.extrabiomesxl.block.sapling_autumn_orange.name=Goldenrod Autumn Sapling
+tile.extrabiomesxl.block.sapling_autumn_red.name=Vermillion Autumn Sapling
+tile.extrabiomesxl.block.sapling_autumn_yellow.name=Citrine Autumn Sapling
+tile.extrabiomesxl.block.sapling_fir.name=Fir Sapling
+tile.extrabiomesxl.block.sapling_redwood.name=Redwood Sapling
+
+#leaves
+tile.extrabiomesxl.block.leaf_autumn_brown.name=Umber Autumn Leaves
+tile.extrabiomesxl.block.leaf_autumn_orange.name=Goldenrod Autumn Leaves
+tile.extrabiomesxl.block.leaf_autumn_red.name=Vermillion Autumn Leaves
+tile.extrabiomesxl.block.leaf_autumn_yellow.name=Citrine Autumn Leaves
+tile.extrabiomesxl.block.leaf_fir.name=Fir Leaves
+tile.extrabiomesxl.block.leaf_redwood.name=Redwood Leaves
+
+#misc
+tile.extrabiomesxl.block.redrock.name=Red Rock
+tile.extrabiomesxl.block.crackedsand.name=Cracked Sand
