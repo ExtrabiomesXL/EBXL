@@ -11,7 +11,7 @@ public class ExtraBlocks {
 	public static Block plank_redwood;
 	public static Block plank_fir;
 	public static Block plank_cypress;
-	public static Block plank_japenese_maple;
+	public static Block plank_japanese_maple;
 	public static Block plank_rainbow_eucalyptus;
 	public static Block plank_autumn;
 	public static Block plank_bald_cypress;
@@ -32,10 +32,18 @@ public class ExtraBlocks {
 	public static Block leafRedwood;
 	public static Block leafCypress_regular;
 	public static Block leafCypress_bald;
+	public static Block leafJapaneseMaple_regular;
+	public static Block leafJapaneseMaple_shrub;
+	public static Block leafRainbowEucalyptus;
+	public static Block leafSakura;
 	public static Block saplingFir;
 	public static Block saplingRedwood;
 	public static Block saplingCypress_regular;
 	public static Block saplingCypress_bald;
+	public static Block saplingJapaneseMaple_regular;
+	public static Block saplingJapaneseMaple_shrub;
+	public static Block saplingRainbowEucalyptus;
+	public static Block saplingSakura;
 	public static Block quarterLog_oak;
 	public static Block quarterLog_fir;
 	public static Block quarterLog_redwood;
@@ -46,7 +54,7 @@ public class ExtraBlocks {
 	public static Block logCypress_regular;
 	public static Block logCypress_bald;
 	public static Block logCypress_bald_elbow;
-	public static Block logJapeneseMaple;
+	public static Block logJapaneseMaple;
 	public static Block logRainbowEucalyptus_regular;
 	public static Block logRainbowEucalyptus_elbow;
 	public static Block logSakura;

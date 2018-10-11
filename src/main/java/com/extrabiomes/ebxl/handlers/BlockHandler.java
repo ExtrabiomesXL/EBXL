@@ -9,6 +9,7 @@ import com.extrabiomes.ebxl.blocks.BlockLogCypress.CypressLogVariant;
 import com.extrabiomes.ebxl.blocks.BlockSaplingCypress.TreeVariantCypress;
 import com.extrabiomes.ebxl.blocks.BlockRedRock.RedRockVariant;
 import com.extrabiomes.ebxl.blocks.BlockPlank.PlankVariant;
+import com.extrabiomes.ebxl.blocks.BlockSaplingJapaneseMaple.TreeVariantJapaneseMaple;
 
 import net.minecraft.block.Block;
 import net.minecraftforge.event.RegistryEvent.Register;
@@ -27,7 +28,7 @@ public class BlockHandler {
 		ExtraBlocks.plank_fir = register(reg, new BlockPlank(PlankVariant.FIR));
 		ExtraBlocks.plank_redwood = register(reg, new BlockPlank(PlankVariant.REDWOOD));
 		ExtraBlocks.plank_cypress = register(reg, new BlockPlank(PlankVariant.CYPRESS));
-		ExtraBlocks.plank_japenese_maple = register(reg, new BlockPlank(PlankVariant.JAPENESE_MAPLE));
+		ExtraBlocks.plank_japanese_maple = register(reg, new BlockPlank(PlankVariant.JAPANESE_MAPLE));
 		ExtraBlocks.plank_rainbow_eucalyptus = register(reg, new BlockPlank(PlankVariant.RAINBOW_EUCALYPTUS));
 		ExtraBlocks.plank_autumn = register(reg, new BlockPlank(PlankVariant.AUTUMN));
 		ExtraBlocks.plank_bald_cypress = register(reg, new BlockPlank(PlankVariant.BALD_CYPRESS));
@@ -44,7 +45,7 @@ public class BlockHandler {
 		ExtraBlocks.logCypress_regular = register(reg, new BlockLogCypress(CypressLogVariant.REGULAR));
 		ExtraBlocks.logCypress_bald = register(reg, new BlockLogCypress(CypressLogVariant.BALD));
 		ExtraBlocks.logCypress_bald_elbow = register(reg, new BlockLogCypress(CypressLogVariant.BALD_ELBOW));
-		ExtraBlocks.logJapeneseMaple = register(reg, new BlockLogJapaneseMaple());
+		ExtraBlocks.logJapaneseMaple = register(reg, new BlockLogJapaneseMaple());
 		ExtraBlocks.logRainbowEucalyptus_regular = register(reg, new BlockLogRainbowEucalyptus(BlockLogRainbowEucalyptus.RainbowEucalyotusLogVariant.REGULAR));
 		ExtraBlocks.logRainbowEucalyptus_elbow = register(reg, new BlockLogRainbowEucalyptus(BlockLogRainbowEucalyptus.RainbowEucalyotusLogVariant.ELBOW));
 		ExtraBlocks.logSakura = register(reg, new BlockLogSakura());
@@ -58,6 +59,10 @@ public class BlockHandler {
 		ExtraBlocks.leafRedwood = register(reg, new BlockLeavesRedwood());
 		ExtraBlocks.leafCypress_regular = register(reg, new BlockLeavesCypress(TreeVariantCypress.REGULAR));
 		ExtraBlocks.leafCypress_bald = register(reg, new BlockLeavesCypress(TreeVariantCypress.BALD));
+		ExtraBlocks.leafJapaneseMaple_regular = register(reg, new BlockLeavesJapaneseMaple(TreeVariantJapaneseMaple.REGULAR));
+		ExtraBlocks.leafJapaneseMaple_shrub = register(reg, new BlockLeavesJapaneseMaple(TreeVariantJapaneseMaple.SHRUB));
+		ExtraBlocks.leafRainbowEucalyptus = register(reg, new BlockLeavesRainbowEucalyptus());
+		ExtraBlocks.leafSakura = register(reg, new BlockLeavesSakura());
 
 		WorldGenAutumnTree.initLeaves();
 		
@@ -85,6 +90,18 @@ public class BlockHandler {
 		ExtraBlocks.saplingCypress_bald = register(reg, new BlockSaplingCypress(TreeVariantCypress.BALD));
 		((BlockLeavesCypress)ExtraBlocks.leafCypress_bald).setSapling((BlockExtraSapling)ExtraBlocks.saplingCypress_bald);
 
+		ExtraBlocks.saplingJapaneseMaple_regular = register(reg, new BlockSaplingJapaneseMaple(TreeVariantJapaneseMaple.REGULAR));
+		((BlockLeavesJapaneseMaple)ExtraBlocks.leafJapaneseMaple_regular).setSapling((BlockExtraSapling)ExtraBlocks.saplingJapaneseMaple_regular);
+
+		ExtraBlocks.saplingJapaneseMaple_shrub = register(reg, new BlockSaplingJapaneseMaple(TreeVariantJapaneseMaple.SHRUB));
+		((BlockLeavesJapaneseMaple)ExtraBlocks.leafJapaneseMaple_shrub).setSapling((BlockExtraSapling)ExtraBlocks.saplingJapaneseMaple_shrub);
+
+		ExtraBlocks.saplingRainbowEucalyptus = register(reg, new BlockSaplingRainbowEucalyptus());
+		((BlockLeavesRainbowEucalyptus)ExtraBlocks.leafRainbowEucalyptus).setSapling((BlockExtraSapling)ExtraBlocks.saplingRainbowEucalyptus);
+
+		ExtraBlocks.saplingSakura = register(reg, new BlockSaplingSakura());
+		((BlockLeavesSakura)ExtraBlocks.leafSakura).setSapling((BlockExtraSapling)ExtraBlocks.saplingSakura);
+
 		Extrabiomes.log.info("-- blocks registered");
 	}
 	
@@ -103,7 +120,7 @@ public class BlockHandler {
 		((BlockPlank)ExtraBlocks.plank_fir).initModel();
 		((BlockPlank)ExtraBlocks.plank_rainbow_eucalyptus).initModel();
 		((BlockPlank)ExtraBlocks.plank_sakura).initModel();
-		((BlockPlank)ExtraBlocks.plank_japenese_maple).initModel();
+		((BlockPlank)ExtraBlocks.plank_japanese_maple).initModel();
 		((BlockPlank)ExtraBlocks.plank_cypress).initModel();
 		((BlockPlank)ExtraBlocks.plank_bald_cypress).initModel();
 		((BlockPlank)ExtraBlocks.plank_autumn).initModel();
@@ -119,8 +136,8 @@ public class BlockHandler {
 		((BlockLogCypress)ExtraBlocks.logCypress_bald).initModel();
 		((BlockLogCypress)ExtraBlocks.logCypress_bald_elbow).initModel();
 		((BlockLogRainbowEucalyptus)ExtraBlocks.logRainbowEucalyptus_regular).initModel();
-		((BlockLogRainbowEucalyptus)ExtraBlocks.logRainbowEucalyptus_regular).initModel();
-		((BlockLogJapaneseMaple)ExtraBlocks.logJapeneseMaple).initModel();
+		((BlockLogRainbowEucalyptus)ExtraBlocks.logRainbowEucalyptus_elbow).initModel();
+		((BlockLogJapaneseMaple)ExtraBlocks.logJapaneseMaple).initModel();
 		((BlockLogSakura)ExtraBlocks.logSakura).initModel();
 
 		((BlockLeavesAutumn)ExtraBlocks.leafAutumn_brown).initModel();
@@ -139,6 +156,14 @@ public class BlockHandler {
 		((BlockSaplingCypress)ExtraBlocks.saplingCypress_regular).initModel();
 		((BlockLeavesCypress)ExtraBlocks.leafCypress_bald).initModel();
 		((BlockSaplingCypress)ExtraBlocks.saplingCypress_bald).initModel();
+		((BlockLeavesJapaneseMaple)ExtraBlocks.leafJapaneseMaple_regular).initModel();
+		((BlockSaplingJapaneseMaple)ExtraBlocks.saplingJapaneseMaple_regular).initModel();
+		((BlockLeavesJapaneseMaple)ExtraBlocks.leafJapaneseMaple_shrub).initModel();
+		((BlockSaplingJapaneseMaple)ExtraBlocks.saplingJapaneseMaple_shrub).initModel();
+		((BlockLeavesRainbowEucalyptus)ExtraBlocks.leafRainbowEucalyptus).initModel();
+		((BlockSaplingRainbowEucalyptus)ExtraBlocks.saplingRainbowEucalyptus).initModel();
+		((BlockLeavesSakura)ExtraBlocks.leafSakura).initModel();
+		((BlockSaplingSakura)ExtraBlocks.saplingSakura).initModel();
 
 		Extrabiomes.log.info("-- models registered");
 	}

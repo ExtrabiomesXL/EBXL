@@ -1,0 +1,10 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "extrabiomesxl:planksredwood"
+  },
+  "variants": {
+    "normal": [{}],
+    "inventory": [{}]
+  }
+}

@@ -11,7 +11,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BlockPlank extends Block {
     public enum PlankVariant{
-        REDWOOD, FIR, CYPRESS, JAPENESE_MAPLE, RAINBOW_EUCALYPTUS, AUTUMN, BALD_CYPRESS, SAKURA;
+        REDWOOD, FIR, CYPRESS, JAPANESE_MAPLE, RAINBOW_EUCALYPTUS, AUTUMN, BALD_CYPRESS, SAKURA;
     }
 
     PlankVariant variant;

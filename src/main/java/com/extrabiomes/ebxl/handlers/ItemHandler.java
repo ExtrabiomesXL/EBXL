@@ -35,8 +35,8 @@ public class ItemHandler {
 		ExtraBlocks.plank_cypress.setCreativeTab(Extrabiomes.creativeTab);
 		register(reg, ExtraBlocks.plank_fir);
 		ExtraBlocks.plank_fir.setCreativeTab(Extrabiomes.creativeTab);
-		register(reg, ExtraBlocks.plank_japenese_maple);
-		ExtraBlocks.plank_japenese_maple.setCreativeTab(Extrabiomes.creativeTab);
+		register(reg, ExtraBlocks.plank_japanese_maple);
+		ExtraBlocks.plank_japanese_maple.setCreativeTab(Extrabiomes.creativeTab);
 		register(reg, ExtraBlocks.plank_rainbow_eucalyptus);
 		ExtraBlocks.plank_rainbow_eucalyptus.setCreativeTab(Extrabiomes.creativeTab);
 		register(reg, ExtraBlocks.plank_redwood);
@@ -62,8 +62,8 @@ public class ItemHandler {
 		ExtraBlocks.logRainbowEucalyptus_regular.setCreativeTab(Extrabiomes.creativeTab);
 		register(reg, ExtraBlocks.logRainbowEucalyptus_elbow);
 		ExtraBlocks.logRainbowEucalyptus_elbow.setCreativeTab(Extrabiomes.creativeTab);
-		register(reg, ExtraBlocks.logJapeneseMaple);
-		ExtraBlocks.logJapeneseMaple.setCreativeTab(Extrabiomes.creativeTab);
+		register(reg, ExtraBlocks.logJapaneseMaple);
+		ExtraBlocks.logJapaneseMaple.setCreativeTab(Extrabiomes.creativeTab);
 		register(reg, ExtraBlocks.logSakura);
 		ExtraBlocks.logSakura.setCreativeTab(Extrabiomes.creativeTab);
 		ExtraBlocks.quarterLog_fir.setCreativeTab(Extrabiomes.creativeTab);
@@ -92,6 +92,14 @@ public class ItemHandler {
 		ExtraBlocks.leafCypress_regular.setCreativeTab(Extrabiomes.creativeTab);
 		register(reg, ExtraBlocks.leafCypress_bald);
 		ExtraBlocks.leafCypress_bald.setCreativeTab(Extrabiomes.creativeTab);
+		register(reg, ExtraBlocks.leafJapaneseMaple_regular);
+		ExtraBlocks.leafJapaneseMaple_regular.setCreativeTab(Extrabiomes.creativeTab);
+		register(reg, ExtraBlocks.leafJapaneseMaple_shrub);
+		ExtraBlocks.leafJapaneseMaple_shrub.setCreativeTab(Extrabiomes.creativeTab);
+		register(reg, ExtraBlocks.leafRainbowEucalyptus);
+		ExtraBlocks.leafRainbowEucalyptus.setCreativeTab(Extrabiomes.creativeTab);
+		register(reg, ExtraBlocks.leafSakura);
+		ExtraBlocks.leafSakura.setCreativeTab(Extrabiomes.creativeTab);
 
 		register(reg, ExtraBlocks.saplingAutumn_brown);
 		ExtraBlocks.saplingAutumn_brown.setCreativeTab(Extrabiomes.creativeTab);
@@ -109,6 +117,14 @@ public class ItemHandler {
 		ExtraBlocks.saplingCypress_regular.setCreativeTab(Extrabiomes.creativeTab);
 		register(reg, ExtraBlocks.saplingCypress_bald);
 		ExtraBlocks.saplingCypress_bald.setCreativeTab(Extrabiomes.creativeTab);
+		register(reg, ExtraBlocks.saplingJapaneseMaple_regular);
+		ExtraBlocks.saplingJapaneseMaple_regular.setCreativeTab(Extrabiomes.creativeTab);
+		register(reg, ExtraBlocks.saplingJapaneseMaple_shrub);
+		ExtraBlocks.saplingJapaneseMaple_shrub.setCreativeTab(Extrabiomes.creativeTab);
+		register(reg, ExtraBlocks.saplingRainbowEucalyptus);
+		ExtraBlocks.saplingRainbowEucalyptus.setCreativeTab(Extrabiomes.creativeTab);
+		register(reg, ExtraBlocks.saplingSakura);
+		ExtraBlocks.saplingSakura.setCreativeTab(Extrabiomes.creativeTab);
 	}
 	
 	public static void register(IForgeRegistry<Item> reg, Item item) {
