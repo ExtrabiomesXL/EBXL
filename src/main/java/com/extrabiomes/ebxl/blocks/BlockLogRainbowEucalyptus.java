@@ -4,7 +4,6 @@ import com.extrabiomes.ebxl.Extrabiomes;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLog;
 import net.minecraft.block.SoundType;
-import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockStateContainer;
@@ -20,27 +19,22 @@ import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-
-
-public class BlockQuarterLog extends Block {
+public class BlockLogRainbowEucalyptus extends Block {
     public static final PropertyEnum<BlockLog.EnumAxis> LOG_AXIS = PropertyEnum.<BlockLog.EnumAxis>create("axis", BlockLog.EnumAxis.class);
 
-    public enum Corner{
-        TL, TR, BL, BR;
+    public enum RainbowEucalyotusLogVariant{
+        REGULAR, ELBOW;
     }
 
-    public enum QuarterLogVarient{
-        OAK, FIR, REDWOOD, BALD_CYPRESS, RAINBOW_EUCALYPTUS;
-    }
-    public final QuarterLogVarient variant;
-    public BlockQuarterLog(QuarterLogVarient variant) {
+    public final RainbowEucalyotusLogVariant variant;
+    public BlockLogRainbowEucalyptus(RainbowEucalyotusLogVariant variant) {
         super(Material.WOOD);
         this.setHardness(2.0F);
         this.setSoundType(SoundType.WOOD);
 
         this.variant = variant;
-        final String name = "log_quarter_"+ variant.toString().toLowerCase();
-        setUnlocalizedName( Extrabiomes.MODID + "." + name );
+        final String name = "log_rainbow_eucalyptus_"+ variant.toString().toLowerCase();
+        setUnlocalizedName( Extrabiomes.MODID + ".block." + name );
         setRegistryName(name);
         setDefaultState( this.blockState.getBaseState().withProperty(LOG_AXIS, BlockLog.EnumAxis.Y) );
     }

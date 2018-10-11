@@ -5,7 +5,17 @@ import scala.tools.nsc.doc.model.Public;
 
 public class ExtraBlocks {
 	public static Block redrock;
+	public static Block red_cobblestone;
+	public static Block redrock_brick;
 	public static Block crackedsand;
+	public static Block plank_redwood;
+	public static Block plank_fir;
+	public static Block plank_cypress;
+	public static Block plank_japenese_maple;
+	public static Block plank_rainbow_eucalyptus;
+	public static Block plank_autumn;
+	public static Block plank_bald_cypress;
+	public static Block plank_sakura;
 	// autumn trees
 	public static Block logAutumn;
 	public static Block leafAutumn_brown;
@@ -30,10 +40,15 @@ public class ExtraBlocks {
 	public static Block quarterLog_fir;
 	public static Block quarterLog_redwood;
 	public static Block quarterLog_bald_cypress;
+	public static Block quarterLog_rainbow_eucalyptus;
 	public static Block logFir;
 	public static Block logRedwood;
 	public static Block logCypress_regular;
 	public static Block logCypress_bald;
 	public static Block logCypress_bald_elbow;
+	public static Block logJapeneseMaple;
+	public static Block logRainbowEucalyptus_regular;
+	public static Block logRainbowEucalyptus_elbow;
+	public static Block logSakura;
 
 }

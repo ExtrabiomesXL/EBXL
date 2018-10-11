@@ -2,6 +2,7 @@ package com.extrabiomes.ebxl.blocks;
 
 import com.extrabiomes.ebxl.Extrabiomes;
 import com.extrabiomes.ebxl.gen.WorldGenAutumnTree;
+import com.extrabiomes.ebxl.gen.WorldGenFirTree;
 
 public class BlockSaplingFir extends BlockExtraSapling{
 //    public enum TreeVariantFir {
@@ -17,6 +18,6 @@ public class BlockSaplingFir extends BlockExtraSapling{
         setUnlocalizedName( Extrabiomes.MODID + ".block." + name );
         setRegistryName( name );
         // NB: requires leaves and logs to be registered before calling this:
-        //setTreeGen( new WorldGenAutumnTree(true, variant) );
+        //setTreeGen( new WorldGenFirTree(true) );
     }
 }

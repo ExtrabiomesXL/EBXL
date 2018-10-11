@@ -11,10 +11,17 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BlockRedRock extends Block {
-	public BlockRedRock() {
+	public enum RedRockVariant{
+		ROCK, COBBLESTONE, ROCK_BRICK;
+	}
+
+	RedRockVariant variant;
+	public BlockRedRock(RedRockVariant variant) {
 		super(Material.ROCK);
-		setUnlocalizedName( Extrabiomes.MODID + ".block.redrock" );
-		setRegistryName("redrock");
+		this.variant = variant;
+		final String name = "red_"+ variant.toString().toLowerCase();
+		setUnlocalizedName( Extrabiomes.MODID + ".block." + name );
+		setRegistryName(name);
 	}
 	
 	@SideOnly(Side.CLIENT)

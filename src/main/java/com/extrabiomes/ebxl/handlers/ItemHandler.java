@@ -19,9 +19,31 @@ public class ItemHandler {
 		
 		register(reg, ExtraBlocks.redrock);
 		ExtraBlocks.redrock.setCreativeTab(Extrabiomes.creativeTab);
-		
+		register(reg, ExtraBlocks.red_cobblestone);
+		ExtraBlocks.red_cobblestone.setCreativeTab(Extrabiomes.creativeTab);
+		register(reg, ExtraBlocks.redrock_brick);
+		ExtraBlocks.redrock_brick.setCreativeTab(Extrabiomes.creativeTab);
+
 		register(reg, ExtraBlocks.crackedsand);
 		ExtraBlocks.crackedsand.setCreativeTab(Extrabiomes.creativeTab);
+
+		register(reg, ExtraBlocks.plank_autumn);
+		ExtraBlocks.plank_autumn.setCreativeTab(Extrabiomes.creativeTab);
+		register(reg, ExtraBlocks.plank_bald_cypress);
+		ExtraBlocks.plank_bald_cypress.setCreativeTab(Extrabiomes.creativeTab);
+		register(reg, ExtraBlocks.plank_cypress);
+		ExtraBlocks.plank_cypress.setCreativeTab(Extrabiomes.creativeTab);
+		register(reg, ExtraBlocks.plank_fir);
+		ExtraBlocks.plank_fir.setCreativeTab(Extrabiomes.creativeTab);
+		register(reg, ExtraBlocks.plank_japenese_maple);
+		ExtraBlocks.plank_japenese_maple.setCreativeTab(Extrabiomes.creativeTab);
+		register(reg, ExtraBlocks.plank_rainbow_eucalyptus);
+		ExtraBlocks.plank_rainbow_eucalyptus.setCreativeTab(Extrabiomes.creativeTab);
+		register(reg, ExtraBlocks.plank_redwood);
+		ExtraBlocks.plank_redwood.setCreativeTab(Extrabiomes.creativeTab);
+		register(reg, ExtraBlocks.plank_sakura);
+		ExtraBlocks.plank_sakura.setCreativeTab(Extrabiomes.creativeTab);
+
 		
 		register(reg, ExtraBlocks.logAutumn);
 		ExtraBlocks.logAutumn.setCreativeTab(Extrabiomes.creativeTab);
@@ -36,6 +58,14 @@ public class ItemHandler {
 		register(reg, ExtraBlocks.logCypress_bald_elbow);
 		ExtraBlocks.logCypress_bald_elbow.setCreativeTab(Extrabiomes.creativeTab);
 		register(reg, ExtraBlocks.quarterLog_fir);
+		register(reg, ExtraBlocks.logRainbowEucalyptus_regular);
+		ExtraBlocks.logRainbowEucalyptus_regular.setCreativeTab(Extrabiomes.creativeTab);
+		register(reg, ExtraBlocks.logRainbowEucalyptus_elbow);
+		ExtraBlocks.logRainbowEucalyptus_elbow.setCreativeTab(Extrabiomes.creativeTab);
+		register(reg, ExtraBlocks.logJapeneseMaple);
+		ExtraBlocks.logJapeneseMaple.setCreativeTab(Extrabiomes.creativeTab);
+		register(reg, ExtraBlocks.logSakura);
+		ExtraBlocks.logSakura.setCreativeTab(Extrabiomes.creativeTab);
 		ExtraBlocks.quarterLog_fir.setCreativeTab(Extrabiomes.creativeTab);
 		register(reg, ExtraBlocks.quarterLog_redwood);
 		ExtraBlocks.quarterLog_redwood.setCreativeTab(Extrabiomes.creativeTab);
@@ -43,6 +73,8 @@ public class ItemHandler {
 		ExtraBlocks.quarterLog_oak.setCreativeTab(Extrabiomes.creativeTab);
 		register(reg, ExtraBlocks.quarterLog_bald_cypress);
 		ExtraBlocks.quarterLog_bald_cypress.setCreativeTab(Extrabiomes.creativeTab);
+		register(reg, ExtraBlocks.quarterLog_rainbow_eucalyptus);
+		ExtraBlocks.quarterLog_rainbow_eucalyptus.setCreativeTab(Extrabiomes.creativeTab);
 
 		register(reg, ExtraBlocks.leafAutumn_brown);
 		ExtraBlocks.leafAutumn_brown.setCreativeTab(Extrabiomes.creativeTab);
