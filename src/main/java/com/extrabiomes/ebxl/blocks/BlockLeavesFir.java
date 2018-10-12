@@ -20,9 +20,6 @@ public class BlockLeavesFir extends BlockExtraLeaves{
         setRegistryName( "leaf_fir" );
     }
 
-
-
-
     @SideOnly(Side.CLIENT)
     public IBlockColor getBlockColor(){
         return new IBlockColor() {

@@ -1,8 +1,7 @@
 package com.extrabiomes.ebxl.blocks;
 
 import com.extrabiomes.ebxl.Extrabiomes;
-import com.extrabiomes.ebxl.gen.WorldGenAutumnTree;
-import com.extrabiomes.ebxl.gen.WorldGenFirTree;
+import com.extrabiomes.ebxl.gen.WorldGenFir;
 
 public class BlockSaplingFir extends BlockExtraSapling{
 //    public enum TreeVariantFir {
