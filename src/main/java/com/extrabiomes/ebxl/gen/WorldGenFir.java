@@ -27,7 +27,6 @@ public class WorldGenFir extends WorldGenAbstractTree {
     private static Block trunkBlock                     = ExtraBlocks.logFir;
     private static final int BASE_HEIGHT                = 8;
     private static final int CANOPY_HEIGHT              = 12;
-    private static final int CANOPY_RADIUS_EXTRA_RADIUS = 2;
     private static final int MAX_VARIANCE_HEIGHT        = 24;
 
     @Override
@@ -55,9 +54,14 @@ public class WorldGenFir extends WorldGenAbstractTree {
 
         final IBlockState leafState = leafBlock.getDefaultState();
 
-        for( int y = _y - CANOPY_HEIGHT + height; y <= _y + height; ++y ) {
+        int max_radius = 2 + rand.nextInt(6);
+        int radius = rand.nextInt(2);
+        int radius_step = 1;
+        int radius_reset = 0;
+
+        // for( int y = _y - CANOPY_HEIGHT + height; y <= _y + height; ++y ) {
+        for( int y = _y + height; y >= _y - CANOPY_HEIGHT + height; --y ) {
             final int canopyRow = y - (_y + height);
-            final int radius = CANOPY_RADIUS_EXTRA_RADIUS + 1 - (canopyRow / 2);
 
             for( int x = _x - radius; x <= _x + radius; ++x ) {
                 final int xDistanceFromTrunk = Math.abs(x - _x);
@@ -74,6 +78,17 @@ public class WorldGenFir extends WorldGenAbstractTree {
                         }
                     }
                 }
+            }
+
+            if( radius >= radius_step ) {
+                radius = radius_reset;
+                radius_reset = 1;
+
+                if( ++radius_step > max_radius ) {
+                    radius_step = max_radius;
+                }
+            } else {
+                ++radius;
             }
         }
     }
