@@ -25,10 +25,10 @@ public class WorldGenFir extends WorldGenAbstractTree {
 
     private static BlockExtraLeaves leafBlock           = (BlockExtraLeaves)ExtraBlocks.leafFir;
     private static Block trunkBlock                     = ExtraBlocks.logFir;
-    private static final int BASE_HEIGHT                = 5; // was 4
-    private static final int CANOPY_HEIGHT              = 3;
-    private static final int CANOPY_RADIUS_EXTRA_RADIUS = 0;
-    private static final int MAX_VARIANCE_HEIGHT        = 3; // was 2
+    private static final int BASE_HEIGHT                = 8;
+    private static final int CANOPY_HEIGHT              = 12;
+    private static final int CANOPY_RADIUS_EXTRA_RADIUS = 2;
+    private static final int MAX_VARIANCE_HEIGHT        = 24;
 
     @Override
     public boolean generate(World world, Random rand, BlockPos position) {

@@ -17,6 +17,6 @@ public class BlockSaplingFir extends BlockExtraSapling{
         setUnlocalizedName( Extrabiomes.MODID + ".block." + name );
         setRegistryName( name );
         // NB: requires leaves and logs to be registered before calling this:
-        //setTreeGen( new WorldGenFirTree(true) );
+        setTreeGen( new WorldGenFir(true) );
     }
 }
