@@ -1,5 +1,6 @@
 package com.extrabiomes.ebxl;
 
+import net.minecraft.creativetab.CreativeTabs;
 import org.apache.logging.log4j.Logger;
 
 import com.extrabiomes.ebxl.config.DebugSettings;
@@ -50,6 +51,8 @@ public class Extrabiomes {
 			dumpAllBiomes();
 		}
 	}
+
+	public static final CreativeTabs creativeTab = new CreativeTabExtraBiomes(MODID);
 	
 	/**
 	 * Dump a list of all loaded biomes and their type enums to

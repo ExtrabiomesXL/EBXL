@@ -1,0 +1,10 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "extrabiomesxl:redrockbrick"
+  },
+  "variants": {
+    "normal": [{}],
+    "inventory": [{}]
+  }
+}

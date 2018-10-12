@@ -1,0 +1,25 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "cube_column",
+    "textures": {
+      "end": "extrabiomesxl:blocks/logredwoodtop",
+      "side": "extrabiomesxl:blocks/logredwoodside"
+    }
+  },
+  "variants": {
+    "normal": [{}],
+    "inventory": [{}],
+    "axis": {
+      "none": {
+        "model": "cube_all",
+          "textures": {
+            "all": "extrabiomesxl:blocks/logautumnside"
+          }
+      },
+      "y": { },
+      "z": { "x": 90 },
+      "x": { "x": 90, "y": 90 }
+    }
+  }
+}
