@@ -1,6 +1,7 @@
 package com.extrabiomes.ebxl.blocks;
 
 import com.extrabiomes.ebxl.Extrabiomes;
+import com.extrabiomes.ebxl.gen.WorldGenRedwood;
 
 public class BlockSaplingRedwood extends BlockExtraSapling{
 //    public enum TreeVariantRedwood {
@@ -16,7 +17,7 @@ public class BlockSaplingRedwood extends BlockExtraSapling{
         setUnlocalizedName( Extrabiomes.MODID + ".block." + name );
         setRegistryName( name );
         // NB: requires leaves and logs to be registered before calling this:
-        //setTreeGen( new WorldGenAutumnTree(true, variant) );
+        setTreeGen( new WorldGenRedwood(true) );
     }
 
 }
